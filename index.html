@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="it" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Matrimonio di Tsina e Simone – 17 Ottobre 2026" />
+  <title>Matrimonio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════════════
+       NAV
+  ══════════════════════════════════════════════════════════ -->
+  <nav id="navbar" aria-label="Navigazione principale">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" id="nav-logo" aria-label="Torna in cima"></a>
+
+      <div class="nav-right">
+        <!-- Language switcher -->
+        <div class="lang-switcher" role="group" aria-label="Language / Lingua / שפה">
+          <button class="lang-btn" data-lang="it" aria-pressed="true">IT</button>
+          <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+          <button class="lang-btn" data-lang="he" aria-pressed="false">עב</button>
+        </div>
+
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Apri menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="#story"    data-nav="story"></a></li>
+        <li><a href="#details"  data-nav="details"></a></li>
+        <li><a href="#schedule" data-nav="schedule"></a></li>
+        <li><a href="#venue"    data-nav="venue"></a></li>
+        <li><a href="#explore"  data-nav="explore"></a></li>
+        <li><a href="#travel"   data-nav="travel"></a></li>
+        <li><a href="#faq"      data-nav="faq"></a></li>
+        <li><a href="#gifts"    data-nav="gifts"></a></li>
+        <li><a href="#gallery"  data-nav="gallery"></a></li>
+        <li><a href="#rsvp"     data-nav="rsvp" class="nav-rsvp"></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════════════════════════
+       HERO
+  ══════════════════════════════════════════════════════════ -->
+  <section id="hero" class="section-hero" aria-label="Hero">
+    <div class="hero-overlay" id="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-tagline"    id="hero-tagline"></p>
+      <h1 class="hero-names"    id="hero-names"></h1>
+      <p class="hero-date"      id="hero-date"></p>
+      <p class="hero-venue"     id="hero-venue"></p>
+      <div class="countdown"    id="countdown" aria-live="polite"></div>
+      <a href="#story" class="hero-cta" aria-label="Scopri di più">&#8595;</a>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+       OUR STORY
+  ══════════════════════════════════════════════════════════ -->
+  <section id="story" class="section section-story" aria-labelledby="story-title">
+    <div class="container">
+      <h2 class="section-title" id="story-title"></h2>
+      <div class="story-timeline" id="story-timeline" role="list"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+       EVENT DETAILS
+  ══════════════════════════════════════════════════════════ -->
+  <section id="details" class="section section-details section-alt" aria-labelledby="details-title">
+    <div class="container">
+      <h2 class="section-title" id="details-title"></h2>
+      <div class="details-grid" id="details-grid" role="list"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+       SCHEDULE
+  ══════════════════════════════════════════════════════════ -->
+  <section id="schedule" class="section section-schedule" aria-labelledby="schedule-title">
+    <div class="container">
+      <h2 class="section-title" id="schedule-title"></h2>
+      <ol class="schedule-list" id="schedule-list"></ol>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+       VENUE
+  ══════════════════════════════════════════════════════════ -->
+  <section id="venue" class="section section-venue section-alt" aria-labelledby="venue-title">
+    <div class="container">
+      <h2 class="section-title" id="venue-title"></h2>
+      <div class="venue-inner">
+        <div class="venue-text">
+          <h3 id="venue-name"></h3>
+          <p  id="venue-description"></p>
+          <p  class="venue-address" id="venue-address"></p>
+          <div class="venue-buttons">
+            <a id="venue-directions" class="btn btn-outline" target="_blank" rel="noopener"></a>
+            <a id="venue-website"    class="btn btn-outline" target="_blank" rel="noopener"></a>
+          </div>
+        </div>
+        <div class="venue-map">
+          <iframe id="venue-map-iframe" allowfullscreen loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade" title="Mappa della location"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+       EXPLORE / ATTRACTIONS
+  ══════════════════════════════════════════════════════════ -->
+  <section id="explore" class="section section-explore" aria-labelledby="explore-title">
+    <div class="container">
+      <h2 class="section-title" id="explore-title"></h2>
+      <p class="section-intro"  id="explore-intro"></p>
+      <div class="places-grid"  id="places-grid"></div>
+      <div class="explore-footer">
+        <p class="transport-note" id="explore-transport-note"></p>
+        <a id="explore-rental-btn" class="btn btn-outline" target="_blank" rel="noopener"></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+       TRAVEL / HOW TO GET THERE
+  ══════════════════════════════════════════════════════════ -->
+  <section id="travel" class="section section-travel section-alt" aria-labelledby="travel-title">
+    <div class="container">
+      <h2 class="section-title" id="travel-title"></h2>
+      <p class="section-intro"  id="travel-intro"></p>
+      <p class="rental-tip"     id="travel-rental-tip"></p>
+      <div class="airports-list" id="airports-list"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+       FAQ
+  ══════════════════════════════════════════════════════════ -->
+  <section id="faq" class="section section-faq" aria-labelledby="faq-title">
+    <div class="container">
+      <h2 class="section-title" id="faq-title"></h2>
+      <dl class="faq-list" id="faq-list"></dl>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+       GIFTS
+  ══════════════════════════════════════════════════════════ -->
+  <section id="gifts" class="section section-gifts section-alt" aria-labelledby="gifts-title">
+    <div class="container">
+      <h2 class="section-title" id="gifts-title"></h2>
+      <p class="gifts-intro"   id="gifts-intro"></p>
+      <div class="gifts-grid"  id="gifts-grid"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+       GALLERY
+  ══════════════════════════════════════════════════════════ -->
+  <section id="gallery" class="section section-gallery" aria-labelledby="gallery-title">
+    <div class="container">
+      <h2 class="section-title" id="gallery-title"></h2>
+      <div class="gallery-grid" id="gallery-grid" role="list"></div>
+    </div>
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo" hidden>
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+      <button class="lightbox-prev"  id="lightbox-prev"  aria-label="Previous">&#8249;</button>
+      <button class="lightbox-next"  id="lightbox-next"  aria-label="Next">&#8250;</button>
+      <img class="lightbox-img"      id="lightbox-img" src="" alt="" />
+      <p   class="lightbox-caption"  id="lightbox-caption"></p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+       RSVP
+  ══════════════════════════════════════════════════════════ -->
+  <section id="rsvp" class="section section-rsvp" aria-labelledby="rsvp-title">
+    <div class="container">
+      <h2 class="section-title" id="rsvp-title"></h2>
+      <p class="rsvp-intro" id="rsvp-intro"></p>
+      <div class="rsvp-iframe-wrapper">
+        <iframe id="rsvp-iframe"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          title="RSVP form"
+          src=""></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <p id="footer-text"></p>
+  </footer>
+
+  <script src="content.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
