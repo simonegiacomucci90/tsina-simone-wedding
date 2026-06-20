@@ -776,7 +776,7 @@ h1, h2, h3, h4 {
   text-align: center;
 }
 
-.transport-body {}
+
 .transport-label { font-weight: 500; font-size: 0.9rem; }
 .transport-desc  { font-size: 0.85rem; color: var(--color-text-light); line-height: 1.6; }
 
@@ -980,6 +980,33 @@ h1, h2, h3, h4 {
   border: none;
   /* height is set via JS from content.js → rsvp.formHeight */
 }
+
+.rsvp-cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn-whatsapp,
+.btn-calendar {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s;
+  color: #fff;
+}
+
+.btn-whatsapp { background: #25D366; }
+.btn-whatsapp:hover { background: #1ebe5d; }
+
+.btn-calendar { background: #4285F4; }
+.btn-calendar:hover { background: #2b6fd4; }
 
 /* ════════════════════════════════════════════════════════════
    FOOTER

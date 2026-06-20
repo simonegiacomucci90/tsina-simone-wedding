@@ -275,14 +275,6 @@ function renderExplore() {
   const { explore } = CONTENT;
   setText('explore-title',          explore.sectionTitle);
   setText('explore-intro',          explore.intro);
-  setText('explore-transport-note', explore.transportNote);
-
-  const rentalBtn = document.getElementById('explore-rental-btn');
-  if (rentalBtn) {
-    rentalBtn.href        = explore.carRentalUrl;
-    rentalBtn.textContent = t(explore.carRentalLabel);
-  }
-
   const grid = document.getElementById('places-grid');
   if (!grid) return;
   grid.innerHTML = '';
@@ -575,6 +567,18 @@ function renderRsvp() {
   // Only update src when the language actually changes to avoid a reload flicker
   if (iframe.src !== newSrc) {
     iframe.src = newSrc;
+  }
+
+  const waBtn = document.getElementById('whatsapp-btn');
+  if (waBtn) {
+    waBtn.href      = rsvp.whatsapp.url;
+    waBtn.innerHTML = rsvp.whatsapp.icon + t(rsvp.whatsapp.label);
+  }
+
+  const calBtn = document.getElementById('calendar-btn');
+  if (calBtn) {
+    calBtn.href      = rsvp.calendar.url;
+    calBtn.innerHTML = rsvp.calendar.icon + t(rsvp.calendar.label);
   }
 }
 

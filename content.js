@@ -197,21 +197,10 @@ const CONTENT = {
       he: "לגלות את האזור",
     },
     intro: {
-      it: "Il castello si trova nel cuore dell'Umbria, a pochi minuti da alcune delle città più belle d'Italia. Approfittate del weekend per esplorare!",
-      en: "The castle sits in the heart of Umbria, minutes from some of Italy's most beautiful cities. Make the most of the weekend and explore!",
-      he: "הטירה ממוקמת בלב אומבריה, דקות ספורות מכמה מהערים היפות ביותר באיטליה. נצלו את סוף השבוע וצאו לגלות!",
+      it: "Tutti i festeggiamenti del matrimonio si terranno nella venue, ma ci piacerebbe che poteste godere anche della bellezza della zona circostante. Qui trovate una selezione di luoghi che vi consigliamo di visitare se pensate di fermarvi qualche giorno in più prima o dopo il matrimonio.",
+      en: "While all of our wedding celebrations will be held at the venue, we'd love for you to enjoy the beauty of the surrounding area as well. Below, you'll find a selection of places we recommend visiting if you're planning to stay a little longer before or after the wedding.",
+      he: "כל חגיגות החתונה שלנו יתקיימו במקום האירוע, אך נשמח שתיהנו גם מיופי האזור הסובב. להלן מבחר מקומות שאנו ממליצים לבקר בהם אם אתם מתכננים להישאר קצת יותר לפני או אחרי החתונה.",
     },
-    transportNote: {
-      it: "Consigliamo di noleggiare un'auto: i luoghi sono collegati da strade panoramiche e non sempre raggiungibili comodamente con i mezzi. Noleggi disponibili all'aeroporto di Perugia e nelle principali città.",
-      en: "We recommend renting a car — the sites are connected by scenic roads and not always easily reachable by public transport. Rentals available at Perugia Airport and in major cities.",
-      he: "אנו ממליצים לשכור רכב — האתרים מחוברים בכבישים ציוריים ולא תמיד נגישים בנוחות בתחבורה ציבורית. השכרות זמינות בנמל התעופה של פרוג'ה ובערים הגדולות.",
-    },
-    carRentalLabel: {
-      it: "Noleggia un'auto",
-      en: "Rent a car",
-      he: "שכור רכב",
-    },
-    carRentalUrl: "https://www.autoeurope.com/car-rental-perugia-airport/",
     places: [
       {
         name:  "Assisi",
@@ -355,9 +344,9 @@ const CONTENT = {
   travel: {
     sectionTitle: { it: "Come Arrivare",   en: "Getting There",    he: "איך להגיע" },
     intro: {
-      it: "Il Castello di Rosciano si trova a Torgiano (PG), nel cuore dell'Umbria. Non è necessario noleggiare un'auto: esistono ottime connessioni in treno e autobus.",
-      en: "Castello di Rosciano is located in Torgiano (PG), in the heart of Umbria. You do not need to rent a car — there are excellent train and coach connections.",
-      he: "קסטלו די רוסקיאנו ממוקם בטורג'יאנו (PG), בלב אומבריה. אין צורך לשכור רכב — ישנן חיבורי רכבת ואוטובוס מצוינים.",
+      it: "Il Castello di Rosciano si trova a Torgiano (PG), nel cuore dell'Umbria. La venue è raggiungibile dalle stazioni ferroviarie di Perugia e Assisi.",
+      en: "Castello di Rosciano is located in Torgiano (PG), in the heart of Umbria. The venue is accessible from Perugia and Assisi railway stations.",
+      he: "קסטלו די רוסקיאנו ממוקם בטורג'יאנו (PG), בלב אומבריה. המקום נגיש מתחנות הרכבת של פרוג'ה ואסיסי.",
     },
     airports: [
       {
@@ -371,7 +360,7 @@ const CONTENT = {
         code: "FCO",
         badge: "blue",
         name: { it: "Roma Fiumicino (FCO) – Migliore per ospiti internazionali", en: "Rome Fiumicino (FCO) – Best for international guests", he: "רומא פיומיצ'ינו (FCO) – הטוב ביותר לאורחים בינלאומיים" },
-        desc: { it: "Il principale aeroporto internazionale d'Italia con voli da tutto il mondo. Ottime connessioni in treno e autobus verso l'Umbria.", en: "Italy's largest international airport with flights from all over the world. Excellent train and coach connections to Umbria.", he: "נמל התעופה הבינלאומי הגדול ביותר באיטליה. חיבורי רכבת ואוטובוס מצוינים לאומבריה." },
+        desc: { it: "Il principale aeroporto internazionale d'Italia con voli da tutto il mondo. Ottime connessioni in treno e autobus verso l'Umbria.", en: "Italy's largest international airport with flights from all over the world. Excellent train and bus connections to Umbria.", he: "נמל התעופה הבינלאומי הגדול ביותר באיטליה. חיבורי רכבת ואוטובוס מצוינים לאומבריה." },
         url: "https://www.adr.it/fiumicino",
       },
       {
@@ -384,7 +373,7 @@ const CONTENT = {
     ],
     trainSection: {
       title: { it: "🚆 In treno", en: "🚆 Traveling by Train", he: "🚆 נסיעה ברכבת" },
-      intro: { it: "L'Italia ha un'eccellente rete ferroviaria. La venue è raggiungibile dalle stazioni di Perugia e Assisi.", en: "Italy has an excellent rail network. The venue is easily accessible from Perugia and Assisi railway stations.", he: "לאיטליה רשת רכבות מצוינת. המקום נגיש בקלות מתחנות הרכבת של פרוג'ה ואסיסי." },
+      intro: { it: "La venue è raggiungibile dalle stazioni di Perugia e Assisi.", en: "The venue is accessible from Perugia and Assisi railway stations.", he: "המקום נגיש מתחנות הרכבת של פרוג'ה ואסיסי." },
       routes: [
         { from: { en: "From Rome", it: "Da Roma", he: "מרומא" }, desc: { en: "Take a train to Perugia or Assisi, then continue by taxi (~20 min) or our wedding shuttle (if available) to the venue.", it: "Prendi un treno per Perugia o Assisi, poi continua in taxi (~20 min) o con il nostro shuttle nuziale (se disponibile).", he: "קח רכבת לפרוג'ה או אסיסי, ואז המשך במונית (~20 דק') או בשאטל החתונה שלנו (אם זמין) למקום." } },
         { from: { en: "From Florence", it: "Da Firenze", he: "מפירנצה" }, desc: { en: "Take a train to Perugia (some direct, others require one change at Terontola). Then taxi ~20 min or our wedding shuttle (if available).", it: "Prendi un treno per Perugia (alcuni diretti, altri con cambio a Terontola). Poi taxi ~20 min o il nostro shuttle nuziale (se disponibile).", he: "קח רכבת לפרוג'ה (חלק ישירות, אחרים עם החלפה בטרונטולה). ואז מונית ~20 דק' או השאטל שלנו (אם זמין)." } },
@@ -395,13 +384,13 @@ const CONTENT = {
       ],
     },
     coachSection: {
-      title: { it: "🚌 In autobus (opzione economica)", en: "🚌 Traveling by Coach (Budget-Friendly)", he: "🚌 נסיעה באוטובוס (אפשרות חסכונית)" },
-      intro: { it: "Non è necessario noleggiare un'auto. Vari operatori collegano Roma e Firenze con Perugia e Assisi.", en: "You do not need to rent a car. Several coach companies connect Rome and Florence to Perugia and Assisi.", he: "אין צורך לשכור רכב. מספר חברות אוטובוס מחברות את רומא ופירנצה לפרוג'ה ואסיסי." },
+      title: { it: "🚌 In autobus", en: "🚌 Traveling by Bus", he: "🚌 נסיעה באוטובוס" },
+      intro: { it: "Vari operatori collegano Roma e Firenze con Perugia e Assisi.", en: "Several bus companies connect Rome and Florence to Perugia and Assisi.", he: "מספר חברות אוטובוס מחברות את רומא ופירנצה לפרוג'ה ואסיסי." },
       routeTitle: { en: "Suggested route from Rome Fiumicino (FCO)", it: "Percorso consigliato da Roma Fiumicino (FCO)", he: "מסלול מומלץ מרומא פיומיצ'ינו (FCO)" },
       steps: [
         { en: "Arrive at Rome Fiumicino Airport (FCO).", it: "Arrivi a Roma Fiumicino (FCO).", he: "הגעה לנמל תעופה פיומיצ'ינו (FCO)." },
         { en: "Take the Leonardo Express or regional train to Rome Termini (or Rome Tiburtina).", it: "Prendi il Leonardo Express o un treno regionale per Roma Termini (o Roma Tiburtina).", he: "קח את לאונרדו אקספרס או רכבת אזורית לרומא טרמיני (או רומא טיבורטינה)." },
-        { en: "From Rome Termini or Tiburtina, take a direct coach to Perugia or Assisi.", it: "Da Roma Termini o Tiburtina, prendi un autobus diretto per Perugia o Assisi.", he: "מרומא טרמיני או טיבורטינה, קח אוטובוס ישיר לפרוג'ה או אסיסי." },
+        { en: "From Rome Termini or Tiburtina, take a direct bus to Perugia or Assisi.", it: "Da Roma Termini o Tiburtina, prendi un autobus diretto per Perugia o Assisi.", he: "מרומא טרמיני או טיבורטינה, קח אוטובוס ישיר לפרוג'ה או אסיסי." },
         { en: "From Perugia or Assisi, take a local taxi or our wedding shuttle (if available).", it: "Da Perugia o Assisi, prendi un taxi locale o il nostro shuttle (se disponibile).", he: "מפרוג'ה או אסיסי, קח מונית מקומית או את השאטל שלנו (אם זמין)." },
       ],
       companies: [
@@ -432,7 +421,7 @@ const CONTENT = {
       apps: [
         { emoji: "🚆", name: "Trainline",   url: "https://www.thetrainline.com/",          desc: { en: "Search & book trains across all operators",       it: "Cerca e prenota treni su tutti gli operatori",          he: "חפש והזמן רכבות אצל כל המפעילים" } },
         { emoji: "🚆", name: "Trenitalia",  url: "https://www.trenitalia.com/en.html",     desc: { en: "Official Italian railway network",                it: "Rete ferroviaria italiana ufficiale",                   he: "רשת הרכבות האיטלקית הרשמית" } },
-        { emoji: "🚌", name: "FlixBus",     url: "https://www.flixbus.it/",               desc: { en: "Long-distance coach booking",                    it: "Prenotazione autobus a lunga percorrenza",             he: "הזמנת אוטובוסים לטווח ארוך" } },
+        { emoji: "🚌", name: "FlixBus",     url: "https://www.flixbus.it/",               desc: { en: "Long-distance bus booking",                    it: "Prenotazione autobus a lunga percorrenza",             he: "הזמנת אוטובוסים לטווח ארוך" } },
         { emoji: "🗺️", name: "Google Maps", url: "https://maps.google.com",               desc: { en: "Plan routes and check live transit",              it: "Pianifica percorsi e controlla i trasporti in tempo reale", he: "תכנן מסלולים ובדוק תחבורה ציבורית בזמן אמת" } },
         { emoji: "🚍", name: "Moovit",      url: "https://moovitapp.com/",                desc: { en: "Local public transportation helper",             it: "Aiuto per i trasporti pubblici locali",                he: "עזרה לתחבורה ציבורית מקומית" } },
       ],
@@ -537,6 +526,17 @@ const CONTENT = {
     // Height in px — adjust if the form content grows
     formHeight: 1288,
     loadingLabel: { it: "Caricamento…", en: "Loading…", he: "טוען…" },
+    whatsapp: {
+      label: { it: "Unisciti al gruppo WhatsApp", en: "Join our WhatsApp group", he: "הצטרפו לקבוצת הוואטסאפ שלנו" },
+      icon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" fill="currentColor"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.82.736 5.469 2.027 7.77L0 32l8.43-2.01A15.94 15.94 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 0 1-6.765-1.848l-.485-.287-5.003 1.194 1.215-4.87-.316-.5A13.267 13.267 0 0 1 2.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.87c-.398-.199-2.354-1.162-2.72-1.294-.365-.133-.631-.199-.897.199-.266.398-1.03 1.294-1.263 1.56-.232.266-.465.299-.863.1-.398-.2-1.681-.62-3.203-1.977-1.184-1.056-1.983-2.361-2.215-2.759-.232-.398-.025-.613.175-.811.18-.179.398-.465.597-.698.2-.232.266-.398.398-.664.133-.266.067-.498-.033-.697-.1-.2-.897-2.162-1.23-2.96-.323-.777-.651-.672-.897-.684l-.764-.013c-.266 0-.697.1-1.063.498-.365.398-1.395 1.362-1.395 3.322s1.428 3.854 1.627 4.12c.2.266 2.81 4.29 6.81 6.017.952.411 1.695.657 2.274.841.955.304 1.825.261 2.512.158.766-.114 2.354-.963 2.687-1.893.333-.93.333-1.727.233-1.893-.1-.166-.365-.266-.764-.465z"/></svg>`,
+      url: "https://chat.whatsapp.com/BRAlY1DIKznHeEkj1SZIJx",
+    },
+    calendar: {
+      label: { it: "Aggiungi a Google Calendar", en: "Add to Google Calendar", he: "הוסף ליומן Google" },
+      icon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 4h-1V2h-2v2H8V2H6v2H5C3.9 4 3 4.9 3 6v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zM5 7V6h14v1H5zm2 4h10v2H7zm0 4h7v2H7z"/></svg>`,
+      // Google Calendar URL: 20261016T160000Z = 16 Oct 18:00 CEST (UTC+2) = 16:00 UTC; 20261019T000000Z = end of 18 Oct
+      url: "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Tsina+%26+Simone%27s+Wedding+in+Italy&dates=20261017T120000Z%2F20261018T103000Z&details=Join+us+to+celebrate+our+wedding+at+Castello+di+Rosciano%2C+Torgiano+(PG)%2C+Umbria%2C+Italy.&location=Castello+di+Rosciano%2C+Torgiano%2C+PG%2C+Italy&popup=10080&popup=1440&popup=60",
+    },
   },
 
   /* ── Footer ─────────────────────────────────────────────── */
