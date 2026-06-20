@@ -24,8 +24,8 @@
       <div class="nav-right">
         <!-- Language switcher -->
         <div class="lang-switcher" role="group" aria-label="Language / Lingua / שפה">
-          <button class="lang-btn" data-lang="it" aria-pressed="true">IT</button>
-          <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+          <button class="lang-btn" data-lang="it" aria-pressed="false">IT</button>
+          <button class="lang-btn" data-lang="en" aria-pressed="true">EN</button>
           <button class="lang-btn" data-lang="he" aria-pressed="false">עב</button>
         </div>
 
@@ -39,12 +39,10 @@
         <li><a href="#details"  data-nav="details"></a></li>
         <li><a href="#schedule" data-nav="schedule"></a></li>
         <li><a href="#venue"    data-nav="venue"></a></li>
-        <li><a href="#explore"  data-nav="explore"></a></li>
         <li><a href="#travel"   data-nav="travel"></a></li>
-        <li><a href="#faq"      data-nav="faq"></a></li>
-        <li><a href="#gifts"    data-nav="gifts"></a></li>
-        <li><a href="#gallery"  data-nav="gallery"></a></li>
         <li><a href="#rsvp"     data-nav="rsvp" class="nav-rsvp"></a></li>
+        <li><a href="#gifts"    data-nav="gifts"></a></li>
+        <li><a href="#explore"  data-nav="explore"></a></li>
       </ul>
     </div>
   </nav>
@@ -56,7 +54,10 @@
     <div class="hero-overlay" id="hero-overlay"></div>
     <div class="hero-content">
       <p class="hero-tagline"    id="hero-tagline"></p>
-      <h1 class="hero-names"    id="hero-names"></h1>
+      <div class="hero-names-block">
+        <h1 class="hero-names"   id="hero-names"></h1>
+        <p class="hero-subtitle" id="hero-subtitle"></p>
+      </div>
       <p class="hero-date"      id="hero-date"></p>
       <p class="hero-venue"     id="hero-venue"></p>
       <div class="countdown"    id="countdown" aria-live="polite"></div>
@@ -70,7 +71,16 @@
   <section id="story" class="section section-story" aria-labelledby="story-title">
     <div class="container">
       <h2 class="section-title" id="story-title"></h2>
-      <div class="story-timeline" id="story-timeline" role="list"></div>
+      <p class="section-intro" id="story-intro"></p>
+      <div class="gallery-grid" id="story-gallery" role="list"></div>
+    </div>
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo" hidden>
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+      <button class="lightbox-prev"  id="lightbox-prev"  aria-label="Previous">&#8249;</button>
+      <button class="lightbox-next"  id="lightbox-next"  aria-label="Next">&#8250;</button>
+      <img class="lightbox-img"      id="lightbox-img" src="" alt="" />
+      <p   class="lightbox-caption"  id="lightbox-caption"></p>
     </div>
   </section>
 
@@ -101,34 +111,24 @@
     <div class="container">
       <h2 class="section-title" id="venue-title"></h2>
       <div class="venue-inner">
-        <div class="venue-text">
-          <h3 id="venue-name"></h3>
-          <p  id="venue-description"></p>
-          <p  class="venue-address" id="venue-address"></p>
-          <div class="venue-buttons">
-            <a id="venue-directions" class="btn btn-outline" target="_blank" rel="noopener"></a>
-            <a id="venue-website"    class="btn btn-outline" target="_blank" rel="noopener"></a>
+        <div class="venue-left">
+          <div class="venue-text">
+            <h3 id="venue-name"></h3>
+            <p  id="venue-description"></p>
+            <p  class="venue-address" id="venue-address"></p>
+            <div class="venue-buttons">
+              <a id="venue-directions" class="btn btn-outline" target="_blank" rel="noopener"></a>
+              <a id="venue-website"    class="btn btn-outline" target="_blank" rel="noopener"></a>
+            </div>
+          </div>
+          <div class="venue-map">
+            <iframe id="venue-map-iframe" allowfullscreen loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade" title="Mappa della location"></iframe>
           </div>
         </div>
-        <div class="venue-map">
-          <iframe id="venue-map-iframe" allowfullscreen loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade" title="Mappa della location"></iframe>
+        <div class="venue-right">
+          <img class="venue-photo" src="images/venue.jpg" alt="Castello di Rosciano" loading="lazy" />
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════════════════
-       EXPLORE / ATTRACTIONS
-  ══════════════════════════════════════════════════════════ -->
-  <section id="explore" class="section section-explore" aria-labelledby="explore-title">
-    <div class="container">
-      <h2 class="section-title" id="explore-title"></h2>
-      <p class="section-intro"  id="explore-intro"></p>
-      <div class="places-grid"  id="places-grid"></div>
-      <div class="explore-footer">
-        <p class="transport-note" id="explore-transport-note"></p>
-        <a id="explore-rental-btn" class="btn btn-outline" target="_blank" rel="noopener"></a>
       </div>
     </div>
   </section>
@@ -140,47 +140,7 @@
     <div class="container">
       <h2 class="section-title" id="travel-title"></h2>
       <p class="section-intro"  id="travel-intro"></p>
-      <p class="rental-tip"     id="travel-rental-tip"></p>
       <div class="airports-list" id="airports-list"></div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════════════════
-       FAQ
-  ══════════════════════════════════════════════════════════ -->
-  <section id="faq" class="section section-faq" aria-labelledby="faq-title">
-    <div class="container">
-      <h2 class="section-title" id="faq-title"></h2>
-      <dl class="faq-list" id="faq-list"></dl>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════════════════
-       GIFTS
-  ══════════════════════════════════════════════════════════ -->
-  <section id="gifts" class="section section-gifts section-alt" aria-labelledby="gifts-title">
-    <div class="container">
-      <h2 class="section-title" id="gifts-title"></h2>
-      <p class="gifts-intro"   id="gifts-intro"></p>
-      <div class="gifts-grid"  id="gifts-grid"></div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════════════════
-       GALLERY
-  ══════════════════════════════════════════════════════════ -->
-  <section id="gallery" class="section section-gallery" aria-labelledby="gallery-title">
-    <div class="container">
-      <h2 class="section-title" id="gallery-title"></h2>
-      <div class="gallery-grid" id="gallery-grid" role="list"></div>
-    </div>
-    <!-- Lightbox -->
-    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo" hidden>
-      <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
-      <button class="lightbox-prev"  id="lightbox-prev"  aria-label="Previous">&#8249;</button>
-      <button class="lightbox-next"  id="lightbox-next"  aria-label="Next">&#8250;</button>
-      <img class="lightbox-img"      id="lightbox-img" src="" alt="" />
-      <p   class="lightbox-caption"  id="lightbox-caption"></p>
     </div>
   </section>
 
@@ -198,6 +158,32 @@
           marginwidth="0"
           title="RSVP form"
           src=""></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+       GIFTS
+  ══════════════════════════════════════════════════════════ -->
+  <section id="gifts" class="section section-gifts section-alt" aria-labelledby="gifts-title">
+    <div class="container">
+      <h2 class="section-title" id="gifts-title"></h2>
+      <p class="gifts-intro"   id="gifts-intro"></p>
+      <div class="gifts-grid"  id="gifts-grid"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+       EXPLORE / ATTRACTIONS
+  ══════════════════════════════════════════════════════════ -->
+  <section id="explore" class="section section-explore" aria-labelledby="explore-title">
+    <div class="container">
+      <h2 class="section-title" id="explore-title"></h2>
+      <p class="section-intro"  id="explore-intro"></p>
+      <div class="places-grid"  id="places-grid"></div>
+      <div class="explore-footer">
+        <p class="transport-note" id="explore-transport-note"></p>
+        <a id="explore-rental-btn" class="btn btn-outline" target="_blank" rel="noopener"></a>
       </div>
     </div>
   </section>

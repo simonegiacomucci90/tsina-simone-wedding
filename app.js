@@ -77,8 +77,14 @@ function buildHero() {
   const { couple, date, hero } = CONTENT;
 
   if (hero.backgroundImage) {
-    document.querySelector('.section-hero').style.backgroundImage =
-      `url('${hero.backgroundImage}')`;
+    const isMobile = window.matchMedia('(max-width: 720px)').matches;
+    const img = (isMobile && hero.backgroundImageMobile) ? hero.backgroundImageMobile : hero.backgroundImage;
+    document.querySelector('.section-hero').style.backgroundImage = `url('${img}')`;
+
+    window.matchMedia('(max-width: 720px)').addEventListener('change', e => {
+      const src = (e.matches && hero.backgroundImageMobile) ? hero.backgroundImageMobile : hero.backgroundImage;
+      document.querySelector('.section-hero').style.backgroundImage = `url('${src}')`;
+    });
   }
 
   const overlay = document.getElementById('hero-overlay');
@@ -94,8 +100,9 @@ function buildHero() {
 
 function renderHero() {
   const { couple, date, hero } = CONTENT;
-  setText('hero-tagline', couple.tagline);
-  setText('hero-date',    `${t(date.dayRange)} · ${t(date.display)}`);
+  setText('hero-tagline',  couple.tagline);
+  setText('hero-subtitle', couple.subtitle);
+  setText('hero-date',     `${t(date.dayRange)} · ${t(date.display)}`);
   setText('hero-venue',   hero.venueLabel);
 }
 
@@ -154,32 +161,44 @@ function buildCountdown() {
 }
 
 /* ── Our Story ──────────────────────────────────────────────── */
+let storyLightboxImages = [];
+
 function renderStory() {
   const { story } = CONTENT;
   setText('story-title', story.sectionTitle);
+  const introEl = document.getElementById('story-intro');
+  if (introEl) {
+    introEl.innerHTML = t(story.intro)
+      .split('\n\n')
+      .map(p => `<p>${p}</p>`)
+      .join('');
+  }
 
-  const timeline = document.getElementById('story-timeline');
-  if (!timeline) return;
-  timeline.innerHTML = '';
+  const grid = document.getElementById('story-gallery');
+  if (!grid) return;
+  grid.innerHTML = '';
 
-  story.milestones.forEach(item => {
-    const div = document.createElement('div');
-    div.className = 'story-item reveal';
-    div.setAttribute('role', 'listitem');
+  storyLightboxImages = story.images || [];
 
-    const imgWrapper = makeImgWrapper(item.image, item.title);
+  storyLightboxImages.forEach((imgData, index) => {
+    const item = document.createElement('div');
+    item.className = 'gallery-thumb reveal';
+    item.setAttribute('role', 'listitem');
+    item.setAttribute('tabindex', '0');
 
-    const textDiv = document.createElement('div');
-    textDiv.className = 'story-text';
-    textDiv.innerHTML = `
-      <p class="story-year">${item.year}</p>
-      <h3>${t(item.title)}</h3>
-      <p>${t(item.text)}</p>
+    item.innerHTML = `
+      <img src="${imgData.src}" alt="${t(imgData.alt)}" loading="lazy" />
+      <div class="gallery-thumb-overlay" aria-hidden="true">&#128269;</div>
     `;
 
-    div.append(imgWrapper, textDiv);
-    timeline.appendChild(div);
+    const open = () => openLightbox(index);
+    item.addEventListener('click', open);
+    item.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') open(); });
+
+    grid.appendChild(item);
   });
+
+  initLightbox();
 }
 
 /* ── Event Details ──────────────────────────────────────────── */
@@ -272,59 +291,156 @@ function renderExplore() {
     const card = document.createElement('div');
     card.className = 'place-card reveal';
 
+    const imageHtml = place.image
+      ? `<img class="place-image" src="${place.image}" alt="${place.name}" loading="lazy" />`
+      : '';
+
+    const mustSeeHtml = place.mustSee && place.mustSee.length
+      ? `<ul class="place-mustsee">${place.mustSee.map(s => `<li>${t(s)}</li>`).join('')}</ul>`
+      : '';
+
     card.innerHTML = `
-      <div class="place-header">
-        <span class="place-emoji" aria-hidden="true">${place.emoji}</span>
-        <span class="place-name">${place.name}</span>
-        <span class="place-drive">${t(place.drive)}</span>
+      ${imageHtml}
+      <div class="place-card-body">
+        <div class="place-header">
+          <span class="place-emoji" aria-hidden="true">${place.emoji}</span>
+          <span class="place-name">${place.name}</span>
+          <span class="place-drive">${t(place.drive)}</span>
+        </div>
+        <p class="place-desc">${t(place.desc)}</p>
+        ${mustSeeHtml}
       </div>
-      <p class="place-desc">${t(place.desc)}</p>
     `;
 
     grid.appendChild(card);
   });
 }
 
-/* ── Travel / Airports ──────────────────────────────────────── */
+/* ── Travel / How to get there ──────────────────────────────── */
 function renderTravel() {
   const { travel } = CONTENT;
-  setText('travel-title',      travel.sectionTitle);
-  setText('travel-intro',      travel.intro);
-  setText('travel-rental-tip', travel.rentalTip);
+  setText('travel-title', travel.sectionTitle);
+  setText('travel-intro', travel.intro);
 
-  const list = document.getElementById('airports-list');
-  if (!list) return;
-  list.innerHTML = '';
+  const container = document.getElementById('airports-list');
+  if (!container) return;
+  container.innerHTML = '';
 
-  travel.airports.forEach(airport => {
-    const card = document.createElement('div');
-    card.className = 'airport-card reveal';
+  // Badge colours
+  const badgeColors = { green: '#2d7a4f', blue: '#1a5fa8', yellow: '#b07d00' };
+  const badgeBg     = { green: '#e8f5ee', blue: '#e8f0fb', yellow: '#fef9e7' };
 
-    const optionsHtml = airport.options.map(opt => `
-      <div class="transport-option">
-        <span class="transport-mode" aria-hidden="true">${opt.mode}</span>
-        <div class="transport-body">
-          <p class="transport-label">${t(opt.label)}</p>
-          <p class="transport-desc">${t(opt.desc)}</p>
-        </div>
-      </div>
-    `).join('');
+  // ── Airports ──────────────────────────────────────────────
+  const airportsWrap = document.createElement('div');
+  airportsWrap.className = 'travel-section reveal';
+  airportsWrap.innerHTML = `<h3 class="travel-subtitle">✈️ ${t({ en:'Recommended Airports', it:'Aeroporti consigliati', he:'נמלי תעופה מומלצים' })}</h3>`;
+  const airportsGrid = document.createElement('div');
+  airportsGrid.className = 'travel-airports-grid';
 
+  travel.airports.forEach(ap => {
+    const color  = badgeColors[ap.badge] || '#555';
+    const bg     = badgeBg[ap.badge]     || '#f5f5f5';
+    const card   = document.createElement('a');
+    card.className = 'travel-airport-card reveal';
+    card.href      = ap.url;
+    card.target    = '_blank';
+    card.rel       = 'noopener';
     card.innerHTML = `
-      <div class="airport-header">
-        <span class="airport-code">${airport.code}</span>
-        <span class="airport-name">${t(airport.name)}</span>
-        <div class="airport-meta">
-          <span>${airport.distance}</span>
-          <span>·</span>
-          <strong>${t(airport.drive)}</strong>
-        </div>
-      </div>
-      <div class="airport-options">${optionsHtml}</div>
+      <span class="travel-airport-code" style="color:${color};background:${bg}">${ap.code}</span>
+      <p class="travel-airport-name">${t(ap.name)}</p>
+      <p class="travel-airport-desc">${t(ap.desc)}</p>
     `;
-
-    list.appendChild(card);
+    airportsGrid.appendChild(card);
   });
+  airportsWrap.appendChild(airportsGrid);
+  container.appendChild(airportsWrap);
+
+  // ── Train ────────────────────────────────────────────────
+  const tr = travel.trainSection;
+  const trainWrap = document.createElement('div');
+  trainWrap.className = 'travel-section reveal';
+  const routesHtml = tr.routes.map(r => `
+    <div class="travel-route">
+      <span class="travel-route-from">${t(r.from)}</span>
+      <span class="travel-route-desc">${t(r.desc)}</span>
+    </div>
+  `).join('');
+  const trainAppsHtml = tr.apps.map(a => `
+    <a href="${a.url}" class="travel-app-chip" target="_blank" rel="noopener">
+      🚆 ${a.name} <span>${t(a.desc)}</span>
+    </a>
+  `).join('');
+  trainWrap.innerHTML = `
+    <h3 class="travel-subtitle">${t(tr.title)}</h3>
+    <p class="travel-text">${t(tr.intro)}</p>
+    <div class="travel-routes">${routesHtml}</div>
+    <div class="travel-chips">${trainAppsHtml}</div>
+  `;
+  container.appendChild(trainWrap);
+
+  // ── Coach ────────────────────────────────────────────────
+  const co = travel.coachSection;
+  const coachWrap = document.createElement('div');
+  coachWrap.className = 'travel-section reveal';
+  const stepsHtml = co.steps.map((s, i) => `
+    <li class="travel-step"><span class="travel-step-num">${i + 1}</span>${t(s)}</li>
+  `).join('');
+  const coachChips = co.companies.map(c => `
+    <a href="${c.url}" class="travel-app-chip" target="_blank" rel="noopener">🚌 ${c.name}</a>
+  `).join('');
+  coachWrap.innerHTML = `
+    <h3 class="travel-subtitle">${t(co.title)}</h3>
+    <p class="travel-text">${t(co.intro)}</p>
+    <p class="travel-route-title">${t(co.routeTitle)}</p>
+    <ol class="travel-steps">${stepsHtml}</ol>
+    <div class="travel-chips">${coachChips}</div>
+  `;
+  container.appendChild(coachWrap);
+
+  // ── Shuttle ──────────────────────────────────────────────
+  const sh = travel.shuttleSection;
+  const shuttleWrap = document.createElement('div');
+  shuttleWrap.className = 'travel-section travel-highlight reveal';
+  shuttleWrap.innerHTML = `
+    <h3 class="travel-subtitle">${t(sh.title)}</h3>
+    <p class="travel-text">${t(sh.text)}</p>
+  `;
+  container.appendChild(shuttleWrap);
+
+  // ── Car Rental ───────────────────────────────────────────
+  const ca = travel.carSection;
+  const carWrap = document.createElement('div');
+  carWrap.className = 'travel-section reveal';
+  const carChips = ca.companies.map(c => `
+    <a href="${c.url}" class="travel-app-chip" target="_blank" rel="noopener">🚗 ${c.name}</a>
+  `).join('');
+  carWrap.innerHTML = `
+    <h3 class="travel-subtitle">${t(ca.title)}</h3>
+    <p class="travel-text">${t(ca.intro)}</p>
+    <div class="travel-chips">${carChips}</div>
+  `;
+  container.appendChild(carWrap);
+
+  // ── Apps ─────────────────────────────────────────────────
+  const ap = travel.appsSection;
+  const appsWrap = document.createElement('div');
+  appsWrap.className = 'travel-section reveal';
+  const appsHtml = ap.apps.map(a => `
+    <a href="${a.url}" class="travel-app-chip" target="_blank" rel="noopener">
+      ${a.emoji} ${a.name} <span>${t(a.desc)}</span>
+    </a>
+  `).join('');
+  appsWrap.innerHTML = `
+    <h3 class="travel-subtitle">${t(ap.title)}</h3>
+    <div class="travel-chips">${appsHtml}</div>
+  `;
+  container.appendChild(appsWrap);
+
+  // ── Contact note ─────────────────────────────────────────
+  const noteWrap = document.createElement('p');
+  noteWrap.className = 'travel-contact-note reveal';
+  noteWrap.textContent = t(travel.contactNote);
+  container.appendChild(noteWrap);
 }
 
 /* ── FAQ ────────────────────────────────────────────────────── */
@@ -392,42 +508,6 @@ function renderGifts() {
   });
 }
 
-/* ── Gallery ────────────────────────────────────────────────── */
-let galleryBuilt = false;
-
-function buildGallery() {
-  if (galleryBuilt) return;
-  galleryBuilt = true;
-
-  setText('gallery-title', CONTENT.gallery.sectionTitle);
-
-  const grid = document.getElementById('gallery-grid');
-  if (!grid) return;
-
-  CONTENT.gallery.images.forEach((imgData, index) => {
-    const item = document.createElement('div');
-    item.className = 'gallery-thumb reveal';
-    item.setAttribute('role', 'listitem');
-    item.setAttribute('tabindex', '0');
-
-    item.innerHTML = `
-      <img src="${imgData.src}" alt="${t(imgData.alt)}" loading="lazy" />
-      <div class="gallery-thumb-overlay" aria-hidden="true">&#128269;</div>
-    `;
-
-    const open = () => openLightbox(index);
-    item.addEventListener('click', open);
-    item.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') open(); });
-
-    grid.appendChild(item);
-  });
-
-  initLightbox();
-}
-
-function renderGalleryTitle() {
-  setText('gallery-title', CONTENT.gallery.sectionTitle);
-}
 
 /* ── Lightbox ───────────────────────────────────────────────── */
 let lightboxIndex = 0;
@@ -453,15 +533,14 @@ function initLightbox() {
 }
 
 function navigateLightbox(dir) {
-  const images = CONTENT.gallery.images;
-  lightboxIndex = (lightboxIndex + dir + images.length) % images.length;
+  lightboxIndex = (lightboxIndex + dir + storyLightboxImages.length) % storyLightboxImages.length;
   setLightboxImage(lightboxIndex);
 }
 
 function setLightboxImage(index) {
   const img = document.getElementById('lightbox-img');
   const cap = document.getElementById('lightbox-caption');
-  const { src, alt } = CONTENT.gallery.images[index];
+  const { src, alt } = storyLightboxImages[index];
   if (img) { img.src = src; img.alt = t(alt); }
   if (cap) cap.textContent = t(alt);
 }
@@ -569,9 +648,8 @@ function renderAll() {
   renderVenue();
   renderExplore();
   renderTravel();
-  renderFaq();
+
   renderGifts();
-  renderGalleryTitle();
   renderRsvp();
   renderFooter();
 
@@ -584,7 +662,6 @@ function boot() {
   // One-time structural builds (things that don't change layout on lang switch)
   buildHero();
   buildCountdown();
-  buildGallery();
   initNav();
   initLangSwitcher();
 

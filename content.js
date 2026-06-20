@@ -12,7 +12,7 @@
 const CONTENT = {
 
   /* ── Site settings ──────────────────────────────────────── */
-  defaultLang: "it",          // "it" | "en" | "he"
+  defaultLang: "en",          // "it" | "en" | "he"
   availableLangs: ["it", "en", "he"],
 
   /* ── Couple ─────────────────────────────────────────────── */
@@ -24,6 +24,11 @@ const CONTENT = {
       it: "Due cuori, una storia",
       en: "Two hearts, one story",
       he: "שני לבבות, סיפור אחד",
+    },
+    subtitle: {
+      it: "si sposano",
+      en: "are getting married",
+      he: "מתחתנים",
     },
   },
 
@@ -45,7 +50,8 @@ const CONTENT = {
 
   /* ── Hero ───────────────────────────────────────────────── */
   hero: {
-    backgroundImage: "images/hero.jpg",
+    backgroundImage: "images/background.jpeg",
+    backgroundImageMobile: "images/background-mobile.jpeg",
     overlayOpacity:  0.45,
     venueLabel: {
       it: "Castello di Rosciano · Umbria, Italia",
@@ -63,7 +69,7 @@ const CONTENT = {
     explore:    { it: "Dintorni",   en: "Explore",   he: "לגלות" },
     travel:     { it: "Arrivo",     en: "Travel",    he: "הגעה" },
     faq:        { it: "FAQ",        en: "FAQ",       he: "שאלות נפוצות" },
-    gifts:      { it: "Regali",     en: "Gifts",     he: "מתנות" },
+    gifts:      { it: "Regalo",     en: "A Little Gift",     he: "מתנה" },
     gallery:    { it: "Galleria",   en: "Gallery",   he: "גלריה" },
     rsvp:       { it: "RSVP",       en: "RSVP",      he: "אישור הגעה" },
   },
@@ -71,37 +77,20 @@ const CONTENT = {
   /* ── Our Story ──────────────────────────────────────────── */
   story: {
     sectionTitle: { it: "La Nostra Storia", en: "Our Story", he: "הסיפור שלנו" },
-    milestones: [
-      {
-        year:  "2019",
-        title: { it: "Il primo incontro",  en: "The first meeting",  he: "הפגישה הראשונה" },
-        text: {
-          it: "Ci siamo conosciuti una sera d'estate durante una cena tra amici. Una risata condivisa, uno sguardo, e il mondo ha cambiato colore.",
-          en: "We met on a summer evening at a dinner with friends. A shared laugh, a glance, and the world changed colour.",
-          he: "נפגשנו בערב קיץ בארוחת ערב עם חברים. צחוק משותף, מבט אחד, והעולם שינה את צבעו.",
-        },
-        image: "images/story1.jpg",
-      },
-      {
-        year:  "2023",
-        title: { it: "La proposta",  en: "The proposal",  he: "ההצעה" },
-        text: {
-          it: "Tra le colline dell'Umbria, al tramonto, Simone ha tirato fuori l'anello. Tsina ha detto sì prima ancora che finisse la domanda.",
-          en: "Amid the Umbrian hills at sunset, Simone brought out the ring. Tsina said yes before he even finished the question.",
-          he: "בין גבעות אומבריה, בשקיעה, סימונה הוציא את הטבעת. צינה אמרה כן לפני שהוא סיים אפילו לשאול.",
-        },
-        image: "images/story2.jpg",
-      },
-      {
-        year:  "2026",
-        title: { it: "Il grande giorno",  en: "The big day",  he: "היום הגדול" },
-        text: {
-          it: "Finalmente pronti a iniziare questa nuova avventura insieme, circondati dalle persone che amiamo.",
-          en: "Finally ready to begin this new adventure together, surrounded by the people we love.",
-          he: "סוף סוף מוכנים להתחיל את ההרפתקה החדשה הזו יחד, מוקפים באנשים שאנו אוהבים.",
-        },
-        image: "images/story3.jpg",
-      },
+    intro: {
+      en: "Tsina's dream was to become a doctor. In her imagination, the world was like a small globe she could spin between her hands: she let it turn and placed her finger on Perugia, Italy. She did not know that in a quiet street in the heart of the city, she would find a red-haired engineer, ready to quietly change the course of her story forever.\n\nAnd so, almost by chance and almost by fate, their paths crossed. A meeting became a conversation, a conversation became love, and love grew through countless small goodbyes and endless moves between homes. Until they understood that home was not a place, but something they were to each other.\n\nAt the beginning of their relationship, Tsina asked Simone: \"If I moved to Israel, would you come with me?\" And Simone, with the certainty of someone who does not yet know what the future holds, replied: \"Of course.\"\n\nYears passed, and what once seemed impossible became real: Tsina was accepted into her studies in Israel. Simone chose to follow her without hesitation. But the world paused for a moment, and the events of October 7th, 2023 delayed his arrival in the Holy Land by almost a year.\n\nAnd so, after the whole journey, they found each other again and built their life together in Ramat Gan — two hearts that traveled far only to discover they had always belonged in the same place. Now they stand at the beginning of their greatest adventure: a family.",
+      it: "Il sogno di Tsina era diventare medico. Nella sua immaginazione, il mondo era come un piccolo globo che poteva far girare tra le mani: lo lasciò girare e posò il dito su Perugia, Italia. Non sapeva che in una strada silenziosa nel cuore della città avrebbe trovato un ingegnere dai capelli rossi, pronto a cambiare silenziosamente il corso della sua storia per sempre.\n\nE così, quasi per caso e quasi per destino, i loro cammini si incrociarono. Un incontro divenne una conversazione, una conversazione divenne amore, e l'amore crebbe attraverso innumerevoli piccoli addii e infiniti traslochi tra case. Finché non capirono che casa non era un luogo, ma qualcosa che erano l'uno per l'altra.\n\nAll'inizio della loro relazione, Tsina chiese a Simone: \"Se mi trasferissi in Israele, verresti con me?\" E Simone, con la certezza di chi non sa ancora cosa riserva il futuro, rispose: \"Certo.\"\n\nPassarono gli anni, e ciò che sembrava impossibile divenne reale: Tsina fu ammessa ai suoi studi in Israele. Simone scelse di seguirla senza esitazione. Ma il mondo si fermò un momento, e gli eventi del 7 ottobre 2023 ritardarono il suo arrivo in Terra Santa di quasi un anno.\n\nE così, dopo tutto il viaggio, si ritrovarono e costruirono la loro vita insieme a Ramat Gan — due cuori che viaggiarono lontano solo per scoprire di essere sempre appartenuti allo stesso posto. Ora si trovano all'inizio della loro più grande avventura: una famiglia.",
+      he: "חלומה של צינה היה להיות רופאה. בדמיונה, העולם היה כגלובוס קטן שיכלה לסובב בין ידיה: היא הניחה לו להסתובב ושמה את אצבעה על פרוג'ה, איטליה. היא לא ידעה שברחוב שקט בלב העיר תמצא מהנדס בעל שיער אדום, מוכן לשנות בשקט את מהלך סיפורה לנצח.\n\nוכך, כמעט במקרה וכמעט בגורל, דרכיהם נפגשו. פגישה הפכה לשיחה, שיחה הפכה לאהבה, ואהבה צמחה דרך פרידות קטנות אינספור ומעברים אינסופיים בין בתים. עד שהבינו שבית אינו מקום, אלא משהו שהיו אחד לשני.\n\nבתחילת מערכת היחסים שלהם, שאלה צינה את סימונה: \"אם אעבור לישראל, האם תבוא איתי?\" וסימונה, עם הביטחון של מי שעדיין אינו יודע מה צופן העתיד, ענה: \"כמובן.\"\n\nשנים עברו, ומה שפעם נראה בלתי אפשרי הפך למציאות: צינה התקבלה ללימודיה בישראל. סימונה בחר ללכת אחריה ללא היסוס. אך העולם עצר לרגע, ואירועי ה-7 באוקטובר 2023 עיכבו את הגעתו לארץ הקודש בכמעט שנה.\n\nוכך, לאחר כל המסע, מצאו זה את זה שוב ובנו את חייהם המשותפים ברמת גן — שני לבבות שנסעו רחוק רק כדי לגלות שתמיד שייכו לאותו מקום. כעת הם עומדים בתחילת ההרפתקה הגדולה ביותר שלהם: משפחה.",
+    },
+    images: [
+      { src: "images/story/story1.jpg", alt: { it: "Tsina e Simone", en: "Tsina and Simone", he: "צינה וסימונה" } },
+      { src: "images/story/story2.jpg", alt: { it: "Tsina e Simone", en: "Tsina and Simone", he: "צינה וסימונה" } },
+      { src: "images/story/story3.jpg", alt: { it: "Tsina e Simone", en: "Tsina and Simone", he: "צינה וסימונה" } },
+      { src: "images/story/story4.jpg", alt: { it: "Tsina e Simone", en: "Tsina and Simone", he: "צינה וסימונה" } },
+      { src: "images/story/story5.jpg", alt: { it: "Tsina e Simone", en: "Tsina and Simone", he: "צינה וסימונה" } },
+      { src: "images/story/story6.jpg", alt: { it: "Tsina e Simone", en: "Tsina and Simone", he: "צינה וסימונה" } },
+      { src: "images/story/story7.jpg", alt: { it: "Tsina e Simone", en: "Tsina and Simone", he: "צינה וסימונה" } },
+      { src: "images/story/story8.png", alt: { it: "Tsina e Simone", en: "Tsina and Simone", he: "צינה וסימונה" } },
     ],
   },
 
@@ -120,20 +109,20 @@ const CONTENT = {
       },
       {
         icon:  "💍",
-        title: { it: "Sabato 17 – Cerimonia & Festa", en: "Saturday 17 – Ceremony & Party", he: "שבת 17 – טקס וחגיגה" },
+        title: { it: "Sabato 17 – Cerimonia, Cena & Festa", en: "Saturday 17 – Ceremony, Dinner & Party", he: "שבת 17 – טקס, ארוחת ערב ומסיבה" },
         lines: {
-          it: ["Cerimonia ore 17:00", "Ricevimento & cena", "Festa fino a tarda notte"],
-          en: ["Ceremony at 5:00 PM",  "Reception & dinner", "Party until late"],
-          he: ["טקס ב-17:00",         "קבלת פנים וארוחת ערב", "מסיבה עד שעות הלילה"],
+          it: ["TBD – Gli eventi inizieranno approssimativamente dalle 16:00"],
+          en: ["TBD – Events will start approximately from around 4:00 PM"],
+          he: ["TBD – האירועים יתחילו בערך מ-16:00"],
         },
       },
       {
         icon:  "🌅",
         title: { it: "Domenica 18 – Arrivederci", en: "Sunday 18 – Farewell", he: "ראשון 18 – פרידה" },
         lines: {
-          it: ["Colazione insieme", "Check-out entro le 11:00", "Arrivederci e grazie!"],
-          en: ["Breakfast together",  "Check-out by 11:00 AM",  "Goodbye and thank you!"],
-          he: ["ארוחת בוקר משותפת",  "צ'ק-אאוט עד 11:00",     "להתראות ותודה!"],
+          it: ["Colazione insieme", "Arrivederci e grazie!"],
+          en: ["Breakfast together", "Goodbye and thank you!"],
+          he: ["ארוחת בוקר משותפת", "להתראות ותודה!"],
         },
       },
     ],
@@ -143,6 +132,13 @@ const CONTENT = {
   schedule: {
     sectionTitle: { it: "Il Programma di Sabato", en: "Saturday Programme", he: "תוכנית השבת" },
     items: [
+      {
+        time:  "",
+        label: { it: "TBD – Il programma dettagliato sarà comunicato prossimamente", en: "TBD – The detailed programme will be shared soon", he: "TBD – התוכנית המפורטת תשותף בקרוב" },
+        note:  { it: "", en: "", he: "" },
+      },
+    ],
+    /* itemsDetailed: [
       {
         time:  "16:30",
         label: { it: "Accoglienza degli ospiti",  en: "Guest welcome",         he: "קבלת אורחים" },
@@ -173,7 +169,7 @@ const CONTENT = {
         label: { it: "Festa & balli",             en: "Party & dancing",       he: "מסיבה וריקודים" },
         note:  { it: "DJ set",                    en: "DJ set",                he: "DJ סט" },
       },
-    ],
+    ], */
   },
 
   /* ── Venue ──────────────────────────────────────────────── */
@@ -187,7 +183,7 @@ const CONTENT = {
       he: "מוקף ביערות אלון בין אסיסי לפרוג'ה, קסטלו די רוסקיאנו הוא אחוזה מימי הביניים מהמאה ה-12 עם נוף עוצר נשימה על עמק אומבריה. האורחים שוהים ישירות בטירה, מה שהופך את סוף השבוע לחוויה בלתי נשכחת.",
     },
     address:       "Castello di Rosciano, Torgiano (PG), Umbria, Italy",
-    mapsEmbedUrl:  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11519.7!2d12.4598!3d43.0158!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132eed8000000001%3A0x1!2sCastello+di+Rosciano!5e0!3m2!1sit!2sit!4v1700000000000",
+    mapsEmbedUrl:  "https://maps.google.com/maps?q=Castello+di+Rosciano,+Torgiano,+PG,+Italy&output=embed&z=15",
     directionsUrl: "https://maps.google.com/?q=Castello+di+Rosciano+Torgiano+Perugia",
     directionsLabel: { it: "Indicazioni stradali", en: "Get directions", he: "הוראות הגעה" },
     websiteLabel:    { it: "Sito del castello",    en: "Castle website", he: "אתר הטירה" },
@@ -220,62 +216,137 @@ const CONTENT = {
       {
         name:  "Assisi",
         emoji: "⛪",
-        drive: { it: "20 min",   en: "20 min",   he: "20 דק'" },
+        drive: { it: "20 min", en: "20 min", he: "20 דק'" },
+        image: "images/explore/assisi.jpg",
         desc: {
           it: "La città di San Francesco, con la sua Basilica patrimonio UNESCO e i vicoli medievali.",
           en: "The city of St. Francis, with its UNESCO Basilica and charming medieval lanes.",
           he: "עיר סנט פרנסיס, עם הבזיליקה שלה הרשומה ב-UNESCO והסמטאות המימי-ביניימיות.",
         },
+        mustSee: [
+          { it: "Basilica di San Francesco (UNESCO)", en: "Basilica of St. Francis (UNESCO)", he: "בזיליקת סנט פרנסיס (UNESCO)" },
+          { it: "Rocca Maggiore & panorama sulla valle", en: "Rocca Maggiore fortress & valley panorama", he: "מבצר רוקה מג'ורה ונוף לעמק" },
+        ],
       },
       {
         name:  "Perugia",
         emoji: "🏛️",
-        drive: { it: "15 min",   en: "15 min",   he: "15 דק'" },
+        drive: { it: "15 min", en: "15 min", he: "15 דק'" },
+        image: "images/explore/perugia.jpg",
         desc: {
           it: "Capoluogo dell'Umbria, famosa per il cioccolato Perugina, l'Università e il centro storico sul colle.",
           en: "Umbria's capital, famous for Perugina chocolate, its hilltop historic centre, and vibrant university life.",
           he: "בירת אומבריה, מפורסמת בשוקולד פרוג'ינה, מרכזה ההיסטורי על הגבעה וחיי האוניברסיטה.",
         },
+        mustSee: [
+          { it: "Corso Vannucci & Fontana Maggiore", en: "Corso Vannucci & Fontana Maggiore", he: "קורסו ואנוצ'י ופונטנה מג'ורה" },
+          { it: "Museo del Cioccolato Perugina", en: "Perugina Chocolate Museum", he: "מוזיאון השוקולד פרוג'ינה" },
+        ],
       },
       {
         name:  "Spello",
         emoji: "🌸",
-        drive: { it: "25 min",   en: "25 min",   he: "25 דק'" },
+        drive: { it: "25 min", en: "25 min", he: "25 דק'" },
+        image: "images/explore/spello.jpg",
         desc: {
           it: "Borgo medievale famoso per i vicoli fioriti e le terrazze di gerani. Un gioiello nascosto dell'Umbria.",
           en: "A medieval village famous for its flower-lined alleys and geranium terraces. A hidden gem of Umbria.",
           he: "כפר מימי ביניים מפורסם בסמטאות המרוצפות פרחים ומרפסות הגרניום. אבן חן נסתרת של אומבריה.",
         },
+        mustSee: [
+          { it: "Vicolo dei Baglioni – il vicolo più fiorito", en: "Vicolo dei Baglioni – the most flower-covered alley", he: "ויקולו דיי באליוני – הסמטה הפורחת ביותר" },
+          { it: "Cappella Baglioni con affreschi del Pinturicchio", en: "Baglioni Chapel with Pinturicchio frescoes", he: "קפלת באליוני עם פרסקאות פינטוריקיו" },
+        ],
+      },
+      {
+        name:  "Foligno",
+        emoji: "🏰",
+        drive: { it: "25 min", en: "25 min", he: "25 דק'" },
+        image: "images/explore/foligno.jpg",
+        desc: {
+          it: "La città natale di Simone! Vivace città umbra nel cuore della Valle Umbra, nota per la Giostra della Quintana e il suo elegante centro storico.",
+          en: "Simone's hometown! A lively Umbrian city in the heart of the Umbrian Valley, known for the Giostra della Quintana tournament and its elegant historic centre.",
+          he: "עיר הולדתו של סימונה! עיר אומברית חיה בלב עמק אומבריה, ידועה בתחרות ג'יוסטרה דלה קווינטנה ומרכזה ההיסטורי האלגנטי.",
+        },
+        mustSee: [
+          { it: "Palazzo Trinci e la sua pinacoteca medievale", en: "Palazzo Trinci and its medieval art gallery", he: "פלאצו טרינצ'י וגלריית האמנות המימי-ביניימית שלו" },
+          { it: "Duomo di San Feliciano", en: "Cathedral of San Feliciano", he: "קתדרלת סן פליציאנו" },
+        ],
+      },
+      {
+        name:  "Bevagna",
+        emoji: "🌿",
+        drive: { it: "20 min", en: "20 min", he: "20 דק'" },
+        image: "images/explore/bevagna.jpg",
+        desc: {
+          it: "Uno dei borghi medievali meglio conservati d'Umbria, con una piazza romanica perfettamente intatta e un'atmosfera fuori dal tempo.",
+          en: "One of Umbria's best-preserved medieval villages, with a perfectly intact Romanesque piazza and a timeless atmosphere.",
+          he: "אחד הכפרים המימי-ביניימיים השמורים ביותר באומבריה, עם פיאצה רומנסקית שלמה ואווירה נצחית.",
+        },
+        mustSee: [
+          { it: "Piazza Silvestri – cuore romanico del borgo", en: "Piazza Silvestri – the Romanesque heart of the village", he: "פיאצה סילבסטרי – הלב הרומנסקי של הכפר" },
+          { it: "Mercato delle Gaite (rievocazione medievale)", en: "Mercato delle Gaite (medieval re-enactment festival)", he: "מרקטו דלה גאיטה (פסטיבל ימי ביניים)" },
+        ],
       },
       {
         name:  "Spoleto",
         emoji: "🎭",
-        drive: { it: "40 min",   en: "40 min",   he: "40 דק'" },
+        drive: { it: "40 min", en: "40 min", he: "40 דק'" },
+        image: "images/explore/spoleto.jpg",
         desc: {
           it: "Città d'arte e musica, sede del celebre Festival dei Due Mondi. Ponte delle Torri e Rocca Albornoziana.",
           en: "A city of art and music, home to the famous Festival of Two Worlds, the Ponte delle Torri bridge and the Rocca fortress.",
           he: "עיר של אמנות ומוזיקה, ביתו של פסטיבל שני העולמות המפורסם, גשר פונטה דלה טורי והמצודה.",
         },
+        mustSee: [
+          { it: "Ponte delle Torri – acquedotto medievale spettacolare", en: "Ponte delle Torri – spectacular medieval aqueduct bridge", he: "פונטה דלה טורי – גשר אמות מים מימי ביניים מרהיב" },
+          { it: "Rocca Albornoziana & Teatro Romano", en: "Rocca Albornoziana fortress & Roman Theatre", he: "מבצר רוקה אלבורנוציאנה ותיאטרון רומי" },
+        ],
       },
       {
-        name:  "Todi",
-        emoji: "🍷",
-        drive: { it: "45 min",   en: "45 min",   he: "45 דק'" },
+        name:  "Cascate delle Marmore",
+        emoji: "💦",
+        drive: { it: "45 min", en: "45 min", he: "45 דק'" },
+        image: "images/explore/marmore.jpg",
         desc: {
-          it: "Considerata tra i borghi medievali più belli d'Italia, con piazze rinascimentali e vino Sagrantino.",
-          en: "Considered one of Italy's most beautiful medieval villages, with Renaissance piazzas and Sagrantino wine.",
-          he: "נחשבת לאחד הכפרים המימי-ביניימיים היפים ביותר באיטליה, עם פיאצות רנסנס ויין סגרנטינו.",
+          it: "Una delle cascate più alte d'Europa, con un salto di 165 metri creato dagli antichi Romani. Uno spettacolo naturale imperdibile nelle colline umbre.",
+          en: "One of Europe's tallest waterfalls, with a 165-metre drop created by the ancient Romans. An unmissable natural spectacle in the Umbrian hills.",
+          he: "אחד ממפלי המים הגבוהים ביותר באירופה, עם נפילה של 165 מטר שנוצרה על ידי הרומאים הקדמונים. מחזה טבעי שאסור לפספס בגבעות אומבריה.",
         },
+        mustSee: [
+          { it: "Belvedere superiore – vista panoramica sull'intera cascata", en: "Upper viewpoint – panoramic view of the entire waterfall", he: "תצפית עליונה – נוף פנורמי של כל המפל" },
+          { it: "Sentiero naturalistico tra grotte e vegetazione lussureggiante", en: "Nature trail through caves and lush vegetation", he: "שביל טבע דרך מערות וצמחייה שופעת" },
+        ],
       },
       {
-        name:  "Orvieto",
-        emoji: "🗿",
-        drive: { it: "55 min",   en: "55 min",   he: "55 דק'" },
+        name:  "Rasiglia",
+        emoji: "💧",
+        drive: { it: "30 min", en: "30 min", he: "30 דק'" },
+        image: "images/explore/rasiglia.jpg",
         desc: {
-          it: "Arroccata su una rupe di tufo, con il suo Duomo gotico tra i più belli del mondo e il Pozzo di San Patrizio.",
-          en: "Perched on a tufa cliff, with one of the world's most beautiful Gothic cathedrals and the famous St Patrick's Well.",
-          he: "ניצבת על צוק טוף, עם קתדרלה גותית מהיפות בעולם ובאר סנט פטריק המפורסמת.",
+          it: "Un piccolo borgo magico alimentato da sorgenti naturali, con ruscelli che scorrono tra le case medievali. Uno dei borghi più suggestivi d'Umbria.",
+          en: "A magical little village fed by natural springs, with streams running between medieval houses. One of Umbria's most enchanting hidden gems.",
+          he: "כפר קסום קטן המוזן ממעיינות טבעיים, עם נחלים זורמים בין הבתים המימי-ביניימיים. אחד מהאבנים הנסתרות הקסומות ביותר של אומבריה.",
         },
+        mustSee: [
+          { it: "I mulini ad acqua medievali e i ruscelli del centro storico", en: "Medieval watermills and streams running through the village", he: "טחנות המים המימי-ביניימיות והנחלים הזורמים בכפר" },
+          { it: "Sentiero delle Cascate – percorso naturalistico tra le sorgenti", en: "Waterfalls Trail – a nature walk through the springs", he: "שביל המפלים – הליכת טבע בין המעיינות" },
+        ],
+      },
+      {
+        name:  "Lago Trasimeno",
+        emoji: "🏊",
+        drive: { it: "25 min", en: "25 min", he: "25 דק'" },
+        image: "images/explore/trasimeno.jpg",
+        desc: {
+          it: "Il quarto lago più grande d'Italia, circondato da colline dorate e borghi medievali. Perfetto per una gita rilassante, con traghetti per le isole e ristoranti sul lago.",
+          en: "Italy's fourth-largest lake, surrounded by golden hills and medieval villages. Perfect for a relaxing day trip — take a ferry to the islands or enjoy fresh fish by the water.",
+          he: "האגם הרביעי בגודלו באיטליה, מוקף גבעות זהובות וכפרים מימי-ביניימיים. מושלם לטיול יום רגוע — קחו מעבורת לאיים או תיהנו מדגים טריים ליד המים.",
+        },
+        mustSee: [
+          { it: "Isola Maggiore – l'unica isola abitata del lago, raggiungibile in traghetto", en: "Isola Maggiore – the lake's only inhabited island, reachable by ferry", he: "איסולה מג'ורה – האי המיושב היחיד באגם, נגיש במעבורת" },
+          { it: "Castiglione del Lago – borgo medievale con vista panoramica sul lago", en: "Castiglione del Lago – medieval village with panoramic lake views", he: "קסטיליונה דל לאגו – כפר מימי ביניים עם נוף פנורמי לאגם" },
+        ],
       },
     ],
   },
@@ -284,107 +355,89 @@ const CONTENT = {
   travel: {
     sectionTitle: { it: "Come Arrivare",   en: "Getting There",    he: "איך להגיע" },
     intro: {
-      it: "Il Castello di Rosciano si trova a Torgiano (PG), nel cuore dell'Umbria. Di seguito le opzioni di viaggio dai principali aeroporti.",
-      en: "Castello di Rosciano is located in Torgiano (PG), in the heart of Umbria. Below are travel options from the main nearby airports.",
-      he: "קסטלו די רוסקיאנו ממוקם בטורג'יאנו (PG), בלב אומבריה. להלן אפשרויות הנסיעה מנמלי התעופה הסמוכים.",
-    },
-    rentalTip: {
-      it: "💡 Consiglio: noleggiare un'auto è l'opzione più comoda. I noleggi si trovano in tutti gli aeroporti elencati.",
-      en: "💡 Tip: renting a car is the most convenient option. Rentals are available at all airports listed below.",
-      he: "💡 טיפ: השכרת רכב היא האפשרות הנוחה ביותר. ניתן לשכור רכב בכל נמלי התעופה המפורטים.",
+      it: "Il Castello di Rosciano si trova a Torgiano (PG), nel cuore dell'Umbria. Non è necessario noleggiare un'auto: esistono ottime connessioni in treno e autobus.",
+      en: "Castello di Rosciano is located in Torgiano (PG), in the heart of Umbria. You do not need to rent a car — there are excellent train and coach connections.",
+      he: "קסטלו די רוסקיאנו ממוקם בטורג'יאנו (PG), בלב אומבריה. אין צורך לשכור רכב — ישנן חיבורי רכבת ואוטובוס מצוינים.",
     },
     airports: [
       {
         code: "PEG",
-        name: { it: "Perugia – San Francesco d'Assisi", en: "Perugia – San Francesco d'Assisi", he: "פרוג'ה – סן פרנצ'סקו ד'אסיסי" },
-        distance: "14 km",
-        drive:    { it: "~17 min in auto",    en: "~17 min by car",     he: "~17 דק' ברכב" },
-        options: [
-          {
-            mode:  "🚗",
-            label: { it: "Auto a noleggio",  en: "Rental car",         he: "השכרת רכב" },
-            desc:  { it: "Noleggi disponibili all'aeroporto (SIXT, Europcar, ecc.).", en: "Rentals available at the airport (SIXT, Europcar, etc.).", he: "השכרות זמינות בנמל התעופה (SIXT, Europcar וכד')." },
-          },
-          {
-            mode:  "🚕",
-            label: { it: "Taxi",             en: "Taxi",               he: "מונית" },
-            desc:  { it: "~17 minuti, circa €25–35.", en: "~17 minutes, approx. €25–35.", he: "~17 דקות, בערך €25–35." },
-          },
-        ],
+        badge: "green",
+        name: { it: "Perugia (PEG) – Opzione migliore", en: "Perugia Airport (PEG) – Best option", he: "נמל תעופה פרוג'ה (PEG) – האפשרות הטובה ביותר" },
+        desc: { it: "Solo ~20 minuti dalla location. Piccolo aeroporto con connessioni internazionali limitate.", en: "Only about 20 minutes from the venue. Small airport with limited international connections.", he: "רק כ-20 דקות מהמקום. נמל תעופה קטן עם חיבורים בינלאומיים מוגבלים." },
+        url: "https://www.airport.umbria.it/en/",
       },
       {
         code: "FCO",
-        name: { it: "Roma Fiumicino (Leonardo da Vinci)", en: "Rome Fiumicino (Leonardo da Vinci)", he: "רומא פיומיצ'ינו (לאונרדו דה וינצ'י)" },
-        distance: "202 km",
-        drive:    { it: "~2 ore in auto",     en: "~2 hours by car",    he: "~2 שעות ברכב" },
-        options: [
-          {
-            mode:  "🚗",
-            label: { it: "Auto a noleggio",   en: "Rental car",         he: "השכרת רכב" },
-            desc:  { it: "Ampia scelta in aeroporto. Autostrada A1 fino a Orte, poi SS3bis/E45 verso Perugia.", en: "Wide choice at the airport. Take A1 to Orte, then SS3bis/E45 toward Perugia.", he: "מבחר רחב בנמל התעופה. קח A1 לאורטה, ואז SS3bis/E45 לכיוון פרוג'ה." },
-          },
-          {
-            mode:  "🚆",
-            label: { it: "Treno + taxi",      en: "Train + taxi",       he: "רכבת + מונית" },
-            desc:  { it: "Treno FL1 da FCO → Roma Termini, poi Frecciarossa/Intercity verso Assisi o Perugia (~2h), poi taxi ~20 min.", en: "FL1 train FCO → Roma Termini, then fast train to Assisi or Perugia (~2h), then taxi ~20 min.", he: "רכבת FL1 FCO → רומא טרמיני, ואז רכבת מהירה לאסיסי או פרוג'ה (~2 שעות), ואז מונית ~20 דק'." },
-          },
-        ],
-      },
-      {
-        code: "CIA",
-        name: { it: "Roma Ciampino (G. B. Pastine)", en: "Rome Ciampino (G. B. Pastine)", he: "רומא צ'אמפינו (ג'י.בי. פסטינה)" },
-        distance: "195 km",
-        drive:    { it: "~2 ore in auto",     en: "~2 hours by car",    he: "~2 שעות ברכב" },
-        options: [
-          {
-            mode:  "🚗",
-            label: { it: "Auto a noleggio",   en: "Rental car",         he: "השכרת רכב" },
-            desc:  { it: "Noleggi disponibili. GRA → A1 direzione Firenze, uscita Orte, poi E45 verso Perugia.", en: "Rentals available. GRA → A1 north to Orte exit, then E45 toward Perugia.", he: "השכרות זמינות. GRA → A1 צפונה לצומת אורטה, ואז E45 לכיוון פרוג'ה." },
-          },
-          {
-            mode:  "🚌",
-            label: { it: "Bus + treno",       en: "Bus + train",        he: "אוטובוס + רכבת" },
-            desc:  { it: "Shuttle Terravision fino a Roma Termini, poi treno per Assisi/Perugia.", en: "Terravision shuttle to Roma Termini, then train to Assisi/Perugia.", he: "שאטל Terravision לרומא טרמיני, ואז רכבת לאסיסי/פרוג'ה." },
-          },
-        ],
+        badge: "blue",
+        name: { it: "Roma Fiumicino (FCO) – Migliore per ospiti internazionali", en: "Rome Fiumicino (FCO) – Best for international guests", he: "רומא פיומיצ'ינו (FCO) – הטוב ביותר לאורחים בינלאומיים" },
+        desc: { it: "Il principale aeroporto internazionale d'Italia con voli da tutto il mondo. Ottime connessioni in treno e autobus verso l'Umbria.", en: "Italy's largest international airport with flights from all over the world. Excellent train and coach connections to Umbria.", he: "נמל התעופה הבינלאומי הגדול ביותר באיטליה. חיבורי רכבת ואוטובוס מצוינים לאומבריה." },
+        url: "https://www.adr.it/fiumicino",
       },
       {
         code: "FLR",
-        name: { it: "Firenze Peretola (A. Vespucci)", en: "Florence Peretola (A. Vespucci)", he: "פירנצה פרטולה (א. וספוצ'י)" },
-        distance: "175 km",
-        drive:    { it: "~1h 50 min in auto", en: "~1h 50 min by car",  he: "~1 שעה 50 דק' ברכב" },
-        options: [
-          {
-            mode:  "🚗",
-            label: { it: "Auto a noleggio",   en: "Rental car",         he: "השכרת רכב" },
-            desc:  { it: "Noleggi in aeroporto. A1 direzione Roma, uscita Valdichiana, poi raccordo verso Perugia.", en: "Rentals at the airport. A1 south, Valdichiana exit, then the Perugia link road.", he: "השכרות בנמל התעופה. A1 דרומה, צומת ולדיכיאנה, ואז כביש הקישור לפרוג'ה." },
-          },
-          {
-            mode:  "🚆",
-            label: { it: "Treno + taxi",      en: "Train + taxi",       he: "רכבת + מונית" },
-            desc:  { it: "Treno Firenze SMN → Terontola-Cortona → Assisi (cambio). Poi taxi ~20 min.", en: "Train Florence SMN → Terontola-Cortona → Assisi (change). Then taxi ~20 min.", he: "רכבת פירנצה SMN → טרונטולה-קורטונה → אסיסי (החלפה). ואז מונית ~20 דק'." },
-          },
-        ],
-      },
-      {
-        code: "AOI",
-        name: { it: "Ancona Falconara (R. Sanzio)", en: "Ancona Falconara (R. Sanzio)", he: "אנקונה פלקונרה (ר. סנציו)" },
-        distance: "118 km",
-        drive:    { it: "~1h 30 min in auto", en: "~1h 30 min by car",  he: "~1 שעה 30 דק' ברכב" },
-        options: [
-          {
-            mode:  "🚗",
-            label: { it: "Auto a noleggio",   en: "Rental car",         he: "השכרת רכב" },
-            desc:  { it: "Noleggi disponibili. SS76 verso Foligno, poi SS75 verso Perugia/Torgiano.", en: "Rentals available. SS76 toward Foligno, then SS75 toward Perugia/Torgiano.", he: "השכרות זמינות. SS76 לכיוון פוליניו, ואז SS75 לכיוון פרוג'ה/טורג'יאנו." },
-          },
-          {
-            mode:  "🚆",
-            label: { it: "Treno + taxi",      en: "Train + taxi",       he: "רכבת + מונית" },
-            desc:  { it: "Treno Ancona → Foligno → Assisi. Poi taxi ~20 min fino al castello.", en: "Train Ancona → Foligno → Assisi. Then taxi ~20 min to the castle.", he: "רכבת אנקונה → פוליניו → אסיסי. ואז מונית ~20 דק' לטירה." },
-          },
-        ],
+        badge: "yellow",
+        name: { it: "Firenze (FLR) – Alternativa comoda", en: "Florence Airport (FLR) – Convenient alternative", he: "נמל תעופה פירנצה (FLR) – חלופה נוחה" },
+        desc: { it: "Alternativa conveniente con facile accesso a Perugia in treno. Ideale se vuoi visitare Firenze prima o dopo il matrimonio.", en: "A convenient alternative with easy access to Perugia by train. Perfect if you plan to visit Florence before or after the wedding.", he: "חלופה נוחה עם גישה קלה לפרוג'ה ברכבת. מושלם אם מתכננים לבקר בפירנצה." },
+        url: "https://www.aeroporto.fi.it/en/",
       },
     ],
+    trainSection: {
+      title: { it: "🚆 In treno", en: "🚆 Traveling by Train", he: "🚆 נסיעה ברכבת" },
+      intro: { it: "L'Italia ha un'eccellente rete ferroviaria. La venue è raggiungibile dalle stazioni di Perugia e Assisi.", en: "Italy has an excellent rail network. The venue is easily accessible from Perugia and Assisi railway stations.", he: "לאיטליה רשת רכבות מצוינת. המקום נגיש בקלות מתחנות הרכבת של פרוג'ה ואסיסי." },
+      routes: [
+        { from: { en: "From Rome", it: "Da Roma", he: "מרומא" }, desc: { en: "Take a train to Perugia or Assisi, then continue by taxi (~20 min) or our wedding shuttle (if available) to the venue.", it: "Prendi un treno per Perugia o Assisi, poi continua in taxi (~20 min) o con il nostro shuttle nuziale (se disponibile).", he: "קח רכבת לפרוג'ה או אסיסי, ואז המשך במונית (~20 דק') או בשאטל החתונה שלנו (אם זמין) למקום." } },
+        { from: { en: "From Florence", it: "Da Firenze", he: "מפירנצה" }, desc: { en: "Take a train to Perugia (some direct, others require one change at Terontola). Then taxi ~20 min or our wedding shuttle (if available).", it: "Prendi un treno per Perugia (alcuni diretti, altri con cambio a Terontola). Poi taxi ~20 min o il nostro shuttle nuziale (se disponibile).", he: "קח רכבת לפרוג'ה (חלק ישירות, אחרים עם החלפה בטרונטולה). ואז מונית ~20 דק' או השאטל שלנו (אם זמין)." } },
+      ],
+      apps: [
+        { name: "Trainline", url: "https://www.thetrainline.com/", desc: { en: "Search & book train tickets across operators", it: "Cerca e prenota biglietti per tutti gli operatori", he: "חפש והזמן כרטיסי רכבת" } },
+        { name: "Trenitalia", url: "https://www.trenitalia.com/en.html", desc: { en: "Official Italian railway app", it: "App ufficiale della ferrovia italiana", he: "אפליקציית הרכבת האיטלקית הרשמית" } },
+      ],
+    },
+    coachSection: {
+      title: { it: "🚌 In autobus (opzione economica)", en: "🚌 Traveling by Coach (Budget-Friendly)", he: "🚌 נסיעה באוטובוס (אפשרות חסכונית)" },
+      intro: { it: "Non è necessario noleggiare un'auto. Vari operatori collegano Roma e Firenze con Perugia e Assisi.", en: "You do not need to rent a car. Several coach companies connect Rome and Florence to Perugia and Assisi.", he: "אין צורך לשכור רכב. מספר חברות אוטובוס מחברות את רומא ופירנצה לפרוג'ה ואסיסי." },
+      routeTitle: { en: "Suggested route from Rome Fiumicino (FCO)", it: "Percorso consigliato da Roma Fiumicino (FCO)", he: "מסלול מומלץ מרומא פיומיצ'ינו (FCO)" },
+      steps: [
+        { en: "Arrive at Rome Fiumicino Airport (FCO).", it: "Arrivi a Roma Fiumicino (FCO).", he: "הגעה לנמל תעופה פיומיצ'ינו (FCO)." },
+        { en: "Take the Leonardo Express or regional train to Rome Termini (or Rome Tiburtina).", it: "Prendi il Leonardo Express o un treno regionale per Roma Termini (o Roma Tiburtina).", he: "קח את לאונרדו אקספרס או רכבת אזורית לרומא טרמיני (או רומא טיבורטינה)." },
+        { en: "From Rome Termini or Tiburtina, take a direct coach to Perugia or Assisi.", it: "Da Roma Termini o Tiburtina, prendi un autobus diretto per Perugia o Assisi.", he: "מרומא טרמיני או טיבורטינה, קח אוטובוס ישיר לפרוג'ה או אסיסי." },
+        { en: "From Perugia or Assisi, take a local taxi or our wedding shuttle (if available).", it: "Da Perugia o Assisi, prendi un taxi locale o il nostro shuttle (se disponibile).", he: "מפרוג'ה או אסיסי, קח מונית מקומית או את השאטל שלנו (אם זמין)." },
+      ],
+      companies: [
+        { name: "MarinoBus", url: "https://www.marinobus.it/en/" },
+        { name: "Itabus",    url: "https://www.itabus.it/en" },
+        { name: "FlixBus",   url: "https://www.flixbus.it/" },
+        { name: "Sulga",     url: "https://www.sulga.eu/en/" },
+      ],
+    },
+    carSection: {
+      title: { it: "🚗 Auto a noleggio", en: "🚗 Rental Cars", he: "🚗 השכרת רכב" },
+      intro: { it: "Se vuoi esplorare l'Umbria con flessibilità, noleggiare un'auto è un'ottima opzione. Le seguenti compagnie operano nei principali aeroporti italiani.", en: "If you'd like the flexibility to explore Umbria, renting a car is a great option. These companies operate at major Italian airports including Rome, Florence and Perugia.", he: "אם תרצו גמישות לחקור את אומבריה, השכרת רכב היא אפשרות נהדרת." },
+      companies: [
+        { name: "Hertz",      url: "https://www.hertz.it/rentacar/reservation/" },
+        { name: "Avis",       url: "https://www.avis.it/en/home" },
+        { name: "Europcar",   url: "https://www.europcar.com/en-it" },
+        { name: "Sixt",       url: "https://www.sixt.it/" },
+        { name: "Budget",     url: "https://www.budget.it/" },
+        { name: "Enterprise", url: "https://www.enterprise.it/en/home.html" },
+      ],
+    },
+    shuttleSection: {
+      title: { it: "🚌 Possibile shuttle nuziale", en: "🚌 Possible Wedding Shuttle", he: "🚌 שאטל חתונה אפשרי" },
+      text: { it: "Stiamo valutando l'organizzazione di uno shuttle da Perugia o Assisi fino alla venue e ritorno. Se sei interessato, puoi indicare la tua preferenza direttamente nel modulo RSVP — ci aiuterà a stimare i posti e a organizzarci al meglio.", en: "We are considering organizing a shuttle service from Perugia or Assisi (depending on demand) to the venue and back. You can indicate your preference directly in the RSVP form — it will help us estimate numbers and finalize arrangements.", he: "אנחנו שוקלים לארגן שאטל מפרוג'ה או אסיסי למקום ובחזרה. ניתן לציין את ההעדפה שלכם ישירות בטופס ה-RSVP — זה יעזור לנו להעריך את מספר הנוסעים ולסיים את ההסדרים." },
+    },
+    appsSection: {
+      title: { it: "📱 App e siti utili", en: "📱 Helpful Apps & Websites", he: "📱 אפליקציות ואתרים שימושיים" },
+      apps: [
+        { emoji: "🚆", name: "Trainline",   url: "https://www.thetrainline.com/",          desc: { en: "Search & book trains across all operators",       it: "Cerca e prenota treni su tutti gli operatori",          he: "חפש והזמן רכבות אצל כל המפעילים" } },
+        { emoji: "🚆", name: "Trenitalia",  url: "https://www.trenitalia.com/en.html",     desc: { en: "Official Italian railway network",                it: "Rete ferroviaria italiana ufficiale",                   he: "רשת הרכבות האיטלקית הרשמית" } },
+        { emoji: "🚌", name: "FlixBus",     url: "https://www.flixbus.it/",               desc: { en: "Long-distance coach booking",                    it: "Prenotazione autobus a lunga percorrenza",             he: "הזמנת אוטובוסים לטווח ארוך" } },
+        { emoji: "🗺️", name: "Google Maps", url: "https://maps.google.com",               desc: { en: "Plan routes and check live transit",              it: "Pianifica percorsi e controlla i trasporti in tempo reale", he: "תכנן מסלולים ובדוק תחבורה ציבורית בזמן אמת" } },
+        { emoji: "🚍", name: "Moovit",      url: "https://moovitapp.com/",                desc: { en: "Local public transportation helper",             it: "Aiuto per i trasporti pubblici locali",                he: "עזרה לתחבורה ציבורית מקומית" } },
+      ],
+    },
+    contactNote: { en: "If you have any questions about getting to the venue, feel free to contact us — we'll be happy to help!", it: "Per qualsiasi domanda su come raggiungere la venue, non esitare a contattarci!", he: "לכל שאלה על הגעה למקום, אל תהססו לפנות אלינו!" },
   },
 
   /* ── FAQ ────────────────────────────────────────────────── */
@@ -420,27 +473,31 @@ const CONTENT = {
 
   /* ── Gifts ──────────────────────────────────────────────── */
   gifts: {
-    sectionTitle: { it: "Lista Nozze", en: "Gift List", he: "רשימת מתנות" },
+    sectionTitle: { it: "Un Piccolo Pensiero", en: "A Little Gift", he: "מתנה קטנה" },
     intro: {
-      it: "La vostra presenza è il regalo più bello. Se desiderate farci un dono, abbiamo pensato a un contributo per il nostro viaggio di nozze.",
-      en: "Your presence is the greatest gift. If you'd like to give something, we'd love a contribution toward our honeymoon.",
-      he: "נוכחותכם היא המתנה הגדולה ביותר. אם תרצו לתת מתנה, נשמח לתרומה לירח הדבש שלנו.",
+      it: "La vostra presenza è il regalo più bello. Se desiderate farci un dono, saremmo felici di un contributo per l'inizio della nostra vita insieme ❤️",
+      en: "Your presence is the greatest gift. If you'd like to give something, we'd love a contribution toward the beginning of our life together ❤️",
+      he: "נוכחותכם היא המתנה הגדולה ביותר. אם תרצו לתת משהו, נשמח לתרומה לתחילת חיינו המשותפים ❤️",
     },
     options: [
-      {
-        icon:  "✈️",
-        title: { it: "Viaggio di nozze",     en: "Honeymoon fund",      he: "קרן ירח דבש" },
-        text:  { it: "Contribuisci al nostro sogno.", en: "Contribute to our dream trip.", he: "תרמו לחלום שלנו." },
-        url:   "https://www.zankyou.it/",
-        label: { it: "Contribuisci", en: "Contribute", he: "תרמו" },
-      },
       {
         icon:  "🏦",
         title: { it: "Bonifico bancario", en: "Bank transfer", he: "העברה בנקאית" },
         text:  {
-          it: "IBAN: IT60 X054 2811 1010 0000 0123 456\nIntestato a: Tsina & Simone",
-          en: "IBAN: IT60 X054 2811 1010 0000 0123 456\nPayable to: Tsina & Simone",
-          he: "IBAN: IT60 X054 2811 1010 0000 0123 456\nלפקודת: Tsina & Simone",
+          it: "IBAN: IT94T0306921705100000014703\nIntestato a: Simone Giacomucci",
+          en: "IBAN: IT94T0306921705100000014703\nPayable to: Simone Giacomucci",
+          he: "IBAN: IT94T0306921705100000014703\nלפקודת: Simone Giacomucci",
+        },
+        url:   "",
+        label: { it: "", en: "", he: "" },
+      },
+      {
+        icon:  "📱",
+        title: { it: "Bit o Paybox", en: "Bit or Paybox", he: "Bit או Paybox" },
+        text:  {
+          it: "Numero di telefono di Tsina: 0542021155",
+          en: "Tsina's phone number: 0542021155",
+          he: "מספר הטלפון של צינה: 0542021155",
         },
         url:   "",
         label: { it: "", en: "", he: "" },
@@ -467,15 +524,15 @@ const CONTENT = {
   rsvp: {
     sectionTitle: { it: "Conferma la Presenza", en: "RSVP", he: "אישור הגעה" },
     intro: {
-      it: "Non vediamo l'ora di festeggiare con voi! Compila il modulo entro il 15 luglio 2026.",
-      en: "We can't wait to celebrate with you! Please fill in the form by 15 July 2026.",
-      he: "אנחנו ממש מצפים לחגוג איתכם! אנא מלאו את הטופס עד 15 ביולי 2026.",
+      it: "Non vediamo l'ora di festeggiare con voi! Compila il modulo e facci sapere se puoi venire.",
+      en: "We can't wait to celebrate with you! Please fill in the form and let us know if you can come.",
+      he: "אנחנו ממש מצפים לחגוג איתכם! אנא מלאו את הטופס והודיעו לנו אם תוכלו לבוא.",
     },
     // One embedded Google Form URL per language
     formUrls: {
-      it: "https://docs.google.com/forms/d/e/1FAIpQLSex0KxUku9pK0YkRa4GreUJYKVaNkFW2YdHJTgwuDaMg7JSig/viewform?embedded=true",
+      it: "https://docs.google.com/forms/d/e/1FAIpQLSevYwqZf0lpY1N738RC7SCz0so0PM6TODYFOqqrkEG8L-rRCg/viewform?embedded=true",
       en: "https://docs.google.com/forms/d/e/1FAIpQLSevYwqZf0lpY1N738RC7SCz0so0PM6TODYFOqqrkEG8L-rRCg/viewform?embedded=true",
-      he: "https://docs.google.com/forms/d/e/1FAIpQLSf0wY1TVORw2L5pRjIc80NcqV6AL9PmMRJZ4DyagqM9l-l2hA/viewform?embedded=true",
+      he: "https://docs.google.com/forms/d/e/1FAIpQLSevYwqZf0lpY1N738RC7SCz0so0PM6TODYFOqqrkEG8L-rRCg/viewform?embedded=true",
     },
     // Height in px — adjust if the form content grows
     formHeight: 1288,
