@@ -535,7 +535,7 @@ const CONTENT = {
       label: { it: "Aggiungi a Google Calendar", en: "Add to Google Calendar", he: "הוסף ליומן Google" },
       icon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 4h-1V2h-2v2H8V2H6v2H5C3.9 4 3 4.9 3 6v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zM5 7V6h14v1H5zm2 4h10v2H7zm0 4h7v2H7z"/></svg>`,
       // Google Calendar URL: 20261016T160000Z = 16 Oct 18:00 CEST (UTC+2) = 16:00 UTC; 20261019T000000Z = end of 18 Oct
-      url: "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Tsina+%26+Simone%27s+Wedding+in+Italy&dates=20261017T120000Z%2F20261018T103000Z&details=Join+us+to+celebrate+our+wedding+at+Castello+di+Rosciano%2C+Torgiano+(PG)%2C+Umbria%2C+Italy.&location=Castello+di+Rosciano%2C+Torgiano%2C+PG%2C+Italy&popup=10080&popup=1440&popup=60",
+      url: "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Tsina+%26+Simone%27s+Wedding+in+Italy&dates=20261016T120000Z%2F20261018T103000Z&details=Join+us+to+celebrate+our+wedding+at+Castello+di+Rosciano%2C+Torgiano+(PG)%2C+Umbria%2C+Italy.&location=Castello+di+Rosciano%2C+Torgiano%2C+PG%2C+Italy&popup=10080&popup=1440&popup=60",
     },
   },
 
