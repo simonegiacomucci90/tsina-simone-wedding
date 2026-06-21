@@ -208,9 +208,9 @@ const CONTENT = {
         drive: { it: "20 min", en: "20 min", he: "20 דק'" },
         image: "images/explore/assisi.jpg",
         desc: {
-          it: "La città di San Francesco, con la sua Basilica patrimonio UNESCO e i vicoli medievali.",
+          it: "La città di San Francesco, con la sua Basilica patrimonio UNESCO e i suggestivi vicoli medievali.",
           en: "The city of St. Francis, with its UNESCO Basilica and charming medieval lanes.",
-          he: "עיר סנט פרנסיס, עם הבזיליקה שלה הרשומה ב-UNESCO והסמטאות המימי-ביניימיות.",
+          he: "עיר סנט פרנסיס, עם הבזיליקה שלה הרשומה ב-UNESCO והסמטאות המימי-ביניימיות הקסומות.",
         },
         mustSee: [
           { it: "Basilica di San Francesco (UNESCO)", en: "Basilica of St. Francis (UNESCO)", he: "בזיליקת סנט פרנסיס (UNESCO)" },
@@ -367,7 +367,7 @@ const CONTENT = {
         code: "FLR",
         badge: "yellow",
         name: { it: "Firenze (FLR) – Alternativa comoda", en: "Florence Airport (FLR) – Convenient alternative", he: "נמל תעופה פירנצה (FLR) – חלופה נוחה" },
-        desc: { it: "Alternativa conveniente con facile accesso a Perugia in treno. Ideale se vuoi visitare Firenze prima o dopo il matrimonio.", en: "A convenient alternative with easy access to Perugia by train. Perfect if you plan to visit Florence before or after the wedding.", he: "חלופה נוחה עם גישה קלה לפרוג'ה ברכבת. מושלם אם מתכננים לבקר בפירנצה." },
+        desc: { it: "Alternativa conveniente con facile accesso a Perugia in treno. Ideale se vuoi visitare Firenze prima o dopo il matrimonio.", en: "A convenient alternative with easy access to Perugia by train. Perfect if you plan to visit Florence before or after the wedding.", he: "חלופה נוחה עם גישה קלה לפרוג'ה ברכבת. מושלם אם מתכננים לבקר בפירנצה לפני או אחרי החתונה." },
         url: "https://www.aeroporto.fi.it/en/",
       },
     ],
@@ -402,7 +402,7 @@ const CONTENT = {
     },
     carSection: {
       title: { it: "🚗 Auto a noleggio", en: "🚗 Rental Cars", he: "🚗 השכרת רכב" },
-      intro: { it: "Se vuoi esplorare l'Umbria con flessibilità, noleggiare un'auto è un'ottima opzione. Le seguenti compagnie operano nei principali aeroporti italiani.", en: "If you'd like the flexibility to explore Umbria, renting a car is a great option. These companies operate at major Italian airports including Rome, Florence and Perugia.", he: "אם תרצו גמישות לחקור את אומבריה, השכרת רכב היא אפשרות נהדרת." },
+      intro: { it: "Se vuoi esplorare l'Umbria con flessibilità, noleggiare un'auto è un'ottima opzione. Le seguenti compagnie operano nei principali aeroporti italiani, tra cui Roma, Firenze e Perugia.", en: "If you'd like the flexibility to explore Umbria, renting a car is a great option. These companies operate at major Italian airports including Rome, Florence and Perugia.", he: "אם תרצו גמישות לחקור את אומבריה, השכרת רכב היא אפשרות נהדרת. חברות אלה פועלות בנמלי התעופה הגדולים באיטליה, כולל רומא, פירנצה ופרוג'ה." },
       companies: [
         { name: "Hertz",      url: "https://www.hertz.it/rentacar/reservation/" },
         { name: "Avis",       url: "https://www.avis.it/en/home" },
@@ -414,7 +414,7 @@ const CONTENT = {
     },
     shuttleSection: {
       title: { it: "🚌 Possibile shuttle nuziale", en: "🚌 Possible Wedding Shuttle", he: "🚌 שאטל חתונה אפשרי" },
-      text: { it: "Stiamo valutando l'organizzazione di uno shuttle da Perugia o Assisi fino alla venue e ritorno. Se sei interessato, puoi indicare la tua preferenza direttamente nel modulo RSVP — ci aiuterà a stimare i posti e a organizzarci al meglio.", en: "We are considering organizing a shuttle service from Perugia or Assisi (depending on demand) to the venue and back. You can indicate your preference directly in the RSVP form — it will help us estimate numbers and finalize arrangements.", he: "אנחנו שוקלים לארגן שאטל מפרוג'ה או אסיסי למקום ובחזרה. ניתן לציין את ההעדפה שלכם ישירות בטופס ה-RSVP — זה יעזור לנו להעריך את מספר הנוסעים ולסיים את ההסדרים." },
+      text: { it: "Stiamo valutando l'organizzazione di uno shuttle da Perugia o Assisi (in base alla domanda) fino alla venue e ritorno. Puoi indicare la tua preferenza direttamente nel modulo RSVP — ci aiuterà a stimare i posti e a organizzarci al meglio.", en: "We are considering organizing a shuttle service from Perugia or Assisi (depending on demand) to the venue and back. You can indicate your preference directly in the RSVP form — it will help us estimate numbers and finalize arrangements.", he: "אנחנו שוקלים לארגן שאטל מפרוג'ה או אסיסי (בהתאם לביקוש) למקום ובחזרה. ניתן לציין את ההעדפה שלכם ישירות בטופס ה-RSVP — זה יעזור לנו להעריך את מספר הנוסעים ולסיים את ההסדרים." },
     },
     appsSection: {
       title: { it: "📱 App e siti utili", en: "📱 Helpful Apps & Websites", he: "📱 אפליקציות ואתרים שימושיים" },
