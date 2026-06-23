@@ -466,7 +466,7 @@ const CONTENT = {
     intro: {
       it: "La vostra presenza è il regalo più bello. Se desiderate farci un dono, saremmo felici di un contributo per l'inizio della nostra vita insieme ❤️",
       en: "Your presence is the greatest gift. If you'd like to give something, we'd love a contribution toward the beginning of our life together ❤️",
-      he: "נוכחותכם היא המתנה הגדולה ביותר. אם תרצו לתת משהו, נשמח לתרומה לתחילת חיינו המשותפים ❤️",
+      he: "נוכחותכם היא המתנה הגדולה ביותר עבורנו. אם בכל זאת תרצו להעניק לנו משהו נוסף, נשמח לכל מתנה שתלווה אותנו בתחילת דרכנו המשותפת ❤️",
     },
     options: [
       {
