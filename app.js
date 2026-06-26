@@ -257,8 +257,13 @@ function renderVenue() {
   const { venue } = CONTENT;
   setText('venue-title', venue.sectionTitle);
   setText('venue-name', venue.name);
-  setText('venue-description', venue.description);
+  setHtml('venue-description', venue.description);
   setText('venue-address', venue.address);
+
+  const callout = document.getElementById('venue-accommodation-callout');
+  if (callout) {
+    callout.innerHTML = `<span class="callout-icon">${venue.accommodationCallout.icon}</span><span class="callout-text">${t(venue.accommodationCallout.text)}</span>`;
+  }
 
   const dir = document.getElementById('venue-directions');
   if (dir) { dir.href = venue.directionsUrl; dir.textContent = t(venue.directionsLabel); }
@@ -653,6 +658,7 @@ function renderAll() {
   renderExplore();
   renderTravel();
 
+  renderFaq();
   renderGifts();
   renderRsvp();
   renderFooter();

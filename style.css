@@ -583,6 +583,32 @@ h1, h2, h3, h4 {
 /* ════════════════════════════════════════════════════════════
    VENUE
 ════════════════════════════════════════════════════════════ */
+.venue-accommodation-callout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: var(--space-sm) 0;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, var(--color-ochre) 0%, var(--color-ochre-dark) 100%);
+  border-radius: var(--radius-lg);
+  color: var(--color-white);
+  text-align: center;
+}
+
+.callout-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.callout-text {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
 .venue-inner {
   display: grid;
   grid-template-columns: 1fr 1fr;

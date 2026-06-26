@@ -102,9 +102,9 @@ const CONTENT = {
         icon:  "🏰",
         title: { it: "Venerdì 16 – Arrivo",     en: "Friday 16 – Arrival",      he: "שישי 16 – הגעה" },
         lines: {
-          it: ["Check-in dalle ore 14:00", "Castello di Rosciano", "Pizza party ore 19:00"],
-          en: ["Check-in from 2:00 PM",    "Castello di Rosciano", "Pizza party at 7:00 PM"],
-          he: ["צ'ק-אין מ-14:00",          "קסטלו די רוסקיאנו",   "מסיבת פיצה ב-19:00"],
+          it: ["Check-in nelle camere dalle ore 14:00", "Castello di Rosciano", "Pizza party ore 19:00"],
+          en: ["Check-in to the rooms from 2:00 PM",  "Castello di Rosciano", "Pizza party at 7:00 PM"],
+          he: ["צ'ק-אין לחדרים מ-14:00",              "קסטלו די רוסקיאנו",   "מסיבת פיצה ב-19:00"],
         },
       },
       {
@@ -120,9 +120,9 @@ const CONTENT = {
         icon:  "🌅",
         title: { it: "Domenica 18 – Arrivederci", en: "Sunday 18 – Farewell", he: "ראשון 18 – פרידה" },
         lines: {
-          it: ["Colazione insieme", "Arrivederci e grazie!"],
-          en: ["Breakfast together", "Goodbye and thank you!"],
-          he: ["ארוחת בוקר משותפת", "להתראות ותודה!"],
+          it: ["Colazione insieme", "Check-out", "Arrivederci e grazie!"],
+          en: ["Breakfast together", "Checkout", "Goodbye and thank you!"],
+          he: ["ארוחת בוקר משותפת", "צ'ק-אאוט", "להתראות ותודה!"],
         },
       },
     ],
@@ -181,6 +181,14 @@ const CONTENT = {
       it: "Immerso nei boschi di lecci tra Assisi e Perugia, il Castello di Rosciano è una dimora medievale del XII secolo con vista mozzafiato sull'intera Valle Umbra. Gli ospiti soggiornano direttamente nel castello, rendendo il weekend un'esperienza indimenticabile.",
       en: "Nestled among holm-oak forests between Assisi and Perugia, Castello di Rosciano is a 12th-century medieval manor with breathtaking views over the entire Umbrian Valley. Guests stay directly in the castle, making the whole weekend an unforgettable experience.",
       he: "מוקף ביערות אלון בין אסיסי לפרוג'ה, קסטלו די רוסקיאנו הוא אחוזה מימי הביניים מהמאה ה-12 עם נוף עוצר נשימה על עמק אומבריה. האורחים שוהים ישירות בטירה, מה שהופך את סוף השבוע לחוויה בלתי נשכחת.",
+    },
+    accommodationCallout: {
+      icon: "🏰",
+      text: {
+        it: "Il pernottamento al castello per il weekend è incluso per tutti gli ospiti. Assicuratevi di compilare il modulo RSVP!",
+        en: "Accommodation at the castle for the weekend is included for all guests. Please make sure to fill in the RSVP!",
+        he: "הלינה בטירה לכל סוף השבוע כלולה עבור כל האורחים. אנא וודאו שמילאתם את טופס ה-RSVP!",
+      },
     },
     address:       "Castello di Rosciano, Torgiano (PG), Umbria, Italy",
     mapsEmbedUrl:  "https://maps.google.com/maps?q=Castello+di+Rosciano,+Torgiano,+PG,+Italy&output=embed&z=15",
@@ -435,27 +443,15 @@ const CONTENT = {
     items: [
       {
         q: { it: "C'è un dress code?",                                 en: "Is there a dress code?",                           he: "האם יש קוד לבוש?" },
-        a: { it: "Sì: abbigliamento elegante. Abiti lunghi per le signore, abito scuro per gli uomini. Evitate il bianco, grazie!", en: "Yes: smart elegant. Long dresses for ladies, dark suit for gentlemen. Please avoid white!", he: "כן: אלגנטי. שמלות ארוכות לגברות, חליפה כהה לגברים. אנא הימנעו מלבן!" },
-      },
-      {
-        q: { it: "Posso portare i bambini?",                           en: "Can I bring children?",                            he: "האם אפשר להביא ילדים?" },
-        a: { it: "Il ricevimento è pensato per adulti. Contattaci se hai necessità particolari.",                              en: "The reception is designed for adults. Please contact us if you have specific needs.", he: "קבלת הפנים מיועדת למבוגרים. אנא צרו איתנו קשר אם יש לכם צרכים מיוחדים." },
+        a: { it: "Sì: casual chic. Venite comodi ma curati — il castello merita un look speciale!", en: "Yes: casual chic. Come comfortable but stylish — the castle deserves a special look!", he: "כן: קז'ואל שיק. בואו נוח אך מטופח — הטירה ראויה למראה מיוחד!" },
       },
       {
         q: { it: "Ci sono opzioni per intolleranze alimentari?",       en: "Are there options for dietary requirements?",      he: "האם יש אפשרויות לדרישות תזונתיות?" },
-        a: { it: "Assolutamente sì. Indicalo nel modulo RSVP.",        en: "Absolutely. Please note it in the RSVP form.",     he: "בהחלט. אנא ציינו זאת בטופס האישור." },
+        a: { it: "Assolutamente sì. Tieni presente che il matrimonio non è kosher. Indica le tue esigenze nel modulo RSVP.", en: "Absolutely. Please note that this is a non-kosher wedding. Please note any dietary requirements in the RSVP form.", he: "בהחלט. שימו לב שהחתונה אינה כשרה. אנא ציינו את הדרישות התזונתיות שלכם בטופס האישור." },
       },
       {
-        q: { it: "Devo prenotare il soggiorno al castello?",           en: "Do I need to book my stay at the castle?",         he: "האם עלי להזמין שהייה בטירה?" },
-        a: { it: "Sì, i posti sono limitati. Contattateci per i dettagli sulla prenotazione degli alloggi nel castello.",      en: "Yes, places are limited. Contact us for details on booking accommodation within the castle.", he: "כן, המקומות מוגבלים. צרו איתנו קשר לפרטים על הזמנת לינה בטירה." },
-      },
-      {
-        q: { it: "Posso usare l'hashtag sui social?",                  en: "Can I share on social media?",                     he: "האם אפשר לשתף ברשתות חברתיות?" },
-        a: { it: "Certo! Usa l'hashtag #TsinaSimone2026. Durante la cerimonia vi chiediamo però di tenere i telefoni in tasca.", en: "Of course! Use #TsinaSimone2026. We do ask that phones stay in pockets during the ceremony.", he: "כמובן! השתמשו ב-#TsinaSimone2026. אנא השאירו טלפונים בכיס במהלך הטקס." },
-      },
-      {
-        q: { it: "Entro quando devo confermare?",                      en: "What is the RSVP deadline?",                       he: "מה המועד האחרון לאישור הגעה?" },
-        a: { it: "Entro il 15 luglio 2026.",                           en: "By 15 July 2026.",                                 he: "עד 15 ביולי 2026." },
+        q: { it: "Dove dormiamo?",                                     en: "Where do we sleep?",                               he: "איפה אנחנו ישנים?" },
+        a: { it: "Il pernottamento al castello è offerto da noi per tutti gli ospiti! I posti sono limitati — contattateci per confermare la vostra camera.", en: "Accommodation at the castle is on us for all guests! Places are limited — please contact us to confirm your room.", he: "הלינה בטירה היא עלינו עבור כל האורחים! המקומות מוגבלים — אנא צרו איתנו קשר כדי לאשר את חדרכם." },
       },
     ],
   },
