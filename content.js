@@ -67,6 +67,7 @@ const CONTENT = {
     schedule:   { it: "Programma",  en: "Schedule",  he: "לוח זמנים" },
     venue:      { it: "Location",   en: "Venue",     he: "מקום האירוע" },
     explore:    { it: "Dintorni",   en: "Explore",   he: "לגלות" },
+    stay:       { it: "Hotel",      en: "Hotels",    he: "מלונות" },
     travel:     { it: "Arrivo",     en: "Travel",    he: "הגעה" },
     faq:        { it: "FAQ",        en: "FAQ",       he: "שאלות נפוצות" },
     gifts:      { it: "Regalo",     en: "A Little Gift",     he: "מתנה" },
@@ -346,6 +347,65 @@ const CONTENT = {
         ],
       },
     ],
+  },
+
+  /* ── Extra nights / Suggested hotels ───────────────────── */
+  stay: {
+    sectionTitle: {
+      it: "Dove Dormire Prima o Dopo",
+      en: "Where to Stay Before or After",
+      he: "איפה לישון לפני או אחרי",
+    },
+    intro: {
+      it: "Il pernottamento durante il weekend del matrimonio è già incluso al castello. Se però volete fermarvi qualche notte in più prima o dopo l'evento, ecco alcune strutture che vi consigliamo, tutte nella zona di Torgiano e a pochi minuti dalla location. La prenotazione è a cura degli ospiti.",
+      en: "Your accommodation for the wedding weekend is already covered at the castle. If you'd like to stay a few extra nights before or after the event, here are some places we recommend — all in the Torgiano area, just a few minutes from the venue. These bookings are up to each guest.",
+      he: "הלינה בסוף שבוע החתונה כבר כלולה בטירה. אם תרצו להישאר כמה לילות נוספים לפני או אחרי האירוע, הנה כמה מקומות שאנו ממליצים עליהם — כולם באזור טורג'יאנו, במרחק דקות ספורות ממקום האירוע. ההזמנה היא באחריות כל אורח.",
+    },
+    hotels: [
+      {
+        name:  "Hotel Siro",
+        image: "images/hotels/siro.png",
+        town:  { it: "Torgiano (PG)", en: "Torgiano (PG)", he: "טורג'יאנו (PG)" },
+        desc: {
+          it: "Piccolo hotel a gestione familiare con 14 camere, all'ingresso del centro di Torgiano. Ha un ristorante di cucina umbra molto apprezzato. Semplice e comodo per una o due notti extra.",
+          en: "A small family-run hotel with 14 rooms, right at the entrance to Torgiano's centre. It has a well-regarded Umbrian restaurant. Simple and convenient for an extra night or two.",
+          he: "מלון קטן בניהול משפחתי עם 14 חדרים, בכניסה למרכז טורג'יאנו. יש בו מסעדה אומברית מוערכת. פשוט ונוח ללילה או שניים נוספים.",
+        },
+        websiteUrl: "https://www.hotelsirotorgiano.it/",
+        mapsUrl:    "https://maps.google.com/?q=Hotel+Siro+Via+Giordano+Bruno+16+Torgiano+Perugia",
+      },
+      {
+        name:  "Boutique Hotel Al Grappolo d'Oro",
+        image: "images/hotels/grappolo-doro.png",
+        town:  { it: "Torgiano (PG)", en: "Torgiano (PG)", he: "טורג'יאנו (PG)" },
+        desc: {
+          it: "Boutique hotel in una dimora dell'Ottocento restaurata, nel cuore del borgo medievale. Piscina, parcheggio interno gratuito e ristorante di cucina umbra con i vini Lungarotti.",
+          en: "A boutique hotel in a restored nineteenth-century mansion in the heart of the medieval village. Swimming pool, free inner parking and an Umbrian restaurant serving Lungarotti wines.",
+          he: "מלון בוטיק באחוזה משוחזרת מהמאה ה-19 בלב הכפר מימי הביניים. בריכת שחייה, חניה פנימית חינם ומסעדה אומברית עם יינות לונגרוטי.",
+        },
+        websiteUrl: "https://www.algrappolodoro.net/en/",
+        mapsUrl:    "https://maps.google.com/?q=Boutique+Hotel+Al+Grappolo+d%27Oro+Via+Principe+Umberto+24+Torgiano",
+      },
+      {
+        name:  "Agriturismo Poggio alle Vigne",
+        image: "images/hotels/poggio-alle-vigne.png",
+        town:  { it: "Brufa di Torgiano (PG)", en: "Brufa di Torgiano (PG)", he: "ברופה די טורג'יאנו (PG)" },
+        desc: {
+          it: "Agriturismo della famiglia Lungarotti in un casale del Seicento sulla collina di Brufa, con 10 appartamenti circondati dai vigneti del Rubesco e da uliveti. Ideale per chi vuole godersi la campagna umbra.",
+          en: "The Lungarotti family's farm stay in a 17th-century farmhouse on the Brufa hill, with 10 apartments surrounded by the Rubesco vineyards and olive groves. Perfect if you want to enjoy the Umbrian countryside.",
+          he: "אירוח כפרי של משפחת לונגרוטי בבית חווה מהמאה ה-17 על גבעת ברופה, עם 10 דירות המוקפות בכרמי הרובסקו ובמטעי זיתים. מושלם למי שרוצה ליהנות מהכפר האומברי.",
+        },
+        websiteUrl: "https://poggioallevigne.it/en/",
+        mapsUrl:    "https://maps.google.com/?q=Agriturismo+Poggio+alle+Vigne+Via+del+Colle+46+Brufa+Torgiano",
+      },
+    ],
+    websiteLabel: { it: "Sito dell'hotel", en: "Hotel website", he: "אתר המלון" },
+    mapsLabel:    { it: "Vedi sulla mappa", en: "View on map",  he: "הצג במפה" },
+    note: {
+      it: "Consigliamo di prenotare con un po' di anticipo: ottobre è un periodo molto bello (e richiesto) in Umbria.",
+      en: "We suggest booking a little in advance — October is a beautiful (and popular) time in Umbria.",
+      he: "אנו ממליצים להזמין מראש — אוקטובר הוא תקופה יפה (ומבוקשת) באומבריה.",
+    },
   },
 
   /* ── Travel / How to get there ──────────────────────────── */

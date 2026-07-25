@@ -313,6 +313,56 @@ function renderExplore() {
   });
 }
 
+/* ── Extra nights / Suggested hotels ───────────────────────── */
+function renderStay() {
+  const { stay } = CONTENT;
+  setText('stay-title', stay.sectionTitle);
+  setText('stay-intro', stay.intro);
+  setText('stay-note',  stay.note);
+
+  const grid = document.getElementById('hotels-grid');
+  if (!grid) return;
+  grid.innerHTML = '';
+
+  stay.hotels.forEach(hotel => {
+    const card = document.createElement('div');
+    card.className = 'hotel-card reveal';
+
+    const imageHtml = hotel.image
+      ? `<img class="hotel-image" src="${hotel.image}" alt="${hotel.name}" loading="lazy" />`
+      : '';
+
+    const links = [];
+    if (hotel.websiteUrl) links.push(`<a class="hotel-link hotel-link-primary" href="${hotel.websiteUrl}" target="_blank" rel="noopener">${t(stay.websiteLabel)}</a>`);
+    if (hotel.mapsUrl)    links.push(`<a class="hotel-link" href="${hotel.mapsUrl}" target="_blank" rel="noopener">${t(stay.mapsLabel)}</a>`);
+
+    card.innerHTML = `
+      ${imageHtml}
+      <div class="hotel-card-body">
+        <div class="hotel-header">
+          <span class="hotel-name">${hotel.name}</span>
+          <span class="hotel-town">${t(hotel.town)}</span>
+        </div>
+        <p class="hotel-desc">${t(hotel.desc)}</p>
+        <div class="hotel-links">${links.join('')}</div>
+      </div>
+    `;
+
+    // Fall back to a neutral placeholder if the photo hasn't been added yet
+    const img = card.querySelector('.hotel-image');
+    if (img) {
+      img.addEventListener('error', () => {
+        const ph = document.createElement('div');
+        ph.className = 'hotel-image img-placeholder';
+        ph.textContent = hotel.name;
+        img.replaceWith(ph);
+      });
+    }
+
+    grid.appendChild(card);
+  });
+}
+
 /* ── Travel / How to get there ──────────────────────────────── */
 function renderTravel() {
   const { travel } = CONTENT;
@@ -656,6 +706,7 @@ function renderAll() {
   renderSchedule();
   renderVenue();
   renderExplore();
+  renderStay();
   renderTravel();
 
   renderFaq();
