@@ -103,18 +103,18 @@ const CONTENT = {
         icon:  "🏰",
         title: { it: "Venerdì 16 – Arrivo",     en: "Friday 16 – Arrival",      he: "שישי 16 – הגעה" },
         lines: {
-          it: ["Check-in nelle camere dalle ore 14:00", "Castello di Rosciano", "<span class=\"detail-em\">Cena, Pizza &amp; Festa ore 18:30</span>"],
-          en: ["Check-in to the rooms from 2:00 PM",  "Castello di Rosciano", "<span class=\"detail-em\">Dinner, Pizza  &amp; Party at 6:30 PM</span>"],
-          he: ["צ'ק-אין לחדרים מ-14:00",              "קסטלו די רוסקיאנו",   "<span class=\"detail-em\"> ארוחת, פיצה ערב ומסיבה ב-18:30</span>"],
+          it: ["Check-in nelle camere dalle ore 14:00", "Castello di Rosciano", "<span class=\"detail-em\">Cena, Pizza &amp; Festa ore 18:30</span>", "Dress code: casual chic"],
+          en: ["Check-in to the rooms from 2:00 PM",  "Castello di Rosciano", "<span class=\"detail-em\">Dinner, Pizza  &amp; Party at 6:30 PM</span>", "Dress code: casual chic"],
+          he: ["צ'ק-אין לחדרים מ-14:00",              "קסטלו די רוסקיאנו",   "<span class=\"detail-em\"> ארוחת, פיצה ערב ומסיבה ב-18:30</span>", "קוד לבוש: קז'ואל שיק"],
         },
       },
       {
         icon:  "💍",
         title: { it: "Sabato 17 – Cerimonia, Cena & Festa", en: "Saturday 17 – Ceremony, Dinner & Party", he: "שבת 17 – טקס, ארוחת ערב ומסיבה" },
         lines: {
-          it: ["Colazione 9:00 – 11:00", "Gli eventi del matrimonio inizieranno dalle 16:30"],
-          en: ["Breakfast 9:00 – 11:00 AM", "Wedding events will start from 4:30 PM"],
-          he: ["ארוחת בוקר 9:00 – 11:00", "אירועי החתונה יתחילו מ-16:30"],
+          it: ["Colazione 9:00 – 11:00", "Gli eventi del matrimonio inizieranno dalle 16:30", "Dress code: abito formale"],
+          en: ["Breakfast 9:00 – 11:00 AM", "Wedding events will start from 4:30 PM", "Dress code: formal attire"],
+          he: ["ארוחת בוקר 9:00 – 11:00", "אירועי החתונה יתחילו מ-16:30", "קוד לבוש: לבוש רשמי"],
         },
       },
       {
