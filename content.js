@@ -103,18 +103,18 @@ const CONTENT = {
         icon:  "🏰",
         title: { it: "Venerdì 16 – Arrivo",     en: "Friday 16 – Arrival",      he: "שישי 16 – הגעה" },
         lines: {
-          it: ["Check-in nelle camere dalle ore 14:00", "Castello di Rosciano", "Pizza party ore 19:00"],
-          en: ["Check-in to the rooms from 2:00 PM",  "Castello di Rosciano", "Pizza party at 7:00 PM"],
-          he: ["צ'ק-אין לחדרים מ-14:00",              "קסטלו די רוסקיאנו",   "מסיבת פיצה ב-19:00"],
+          it: ["Check-in nelle camere dalle ore 14:00", "Castello di Rosciano", "<span class=\"detail-em\">Pizza, Cena &amp; Festa ore 18:30</span>"],
+          en: ["Check-in to the rooms from 2:00 PM",  "Castello di Rosciano", "<span class=\"detail-em\">Pizza, Dinner &amp; Party at 6:30 PM</span>"],
+          he: ["צ'ק-אין לחדרים מ-14:00",              "קסטלו די רוסקיאנו",   "<span class=\"detail-em\">פיצה, ארוחת ערב ומסיבה ב-18:30</span>"],
         },
       },
       {
         icon:  "💍",
         title: { it: "Sabato 17 – Cerimonia, Cena & Festa", en: "Saturday 17 – Ceremony, Dinner & Party", he: "שבת 17 – טקס, ארוחת ערב ומסיבה" },
         lines: {
-          it: ["TBD – Gli eventi inizieranno approssimativamente dalle 16:00"],
-          en: ["TBD – Events will start approximately from around 4:00 PM"],
-          he: ["TBD – האירועים יתחילו בערך מ-16:00"],
+          it: ["Colazione 9:00 – 11:00", "Gli eventi del matrimonio inizieranno dalle 16:30"],
+          en: ["Breakfast 9:00 – 11:00 AM", "Wedding events will start from 4:30 PM"],
+          he: ["ארוחת בוקר 9:00 – 11:00", "אירועי החתונה יתחילו מ-16:30"],
         },
       },
       {
@@ -132,10 +132,31 @@ const CONTENT = {
   /* ── Schedule (Saturday programme) ─────────────────────── */
   schedule: {
     sectionTitle: { it: "Il Programma di Sabato", en: "Saturday Programme", he: "תוכנית השבת" },
+    subtitle:     { it: "Il giorno del matrimonio", en: "Wedding day", he: "יום החתונה" },
     items: [
       {
-        time:  "",
-        label: { it: "TBD – Il programma dettagliato sarà comunicato prossimamente", en: "TBD – The detailed programme will be shared soon", he: "TBD – התוכנית המפורטת תשותף בקרוב" },
+        time:  "16:30",
+        label: { it: "Accoglienza degli ospiti con finger food", en: "Guest welcome with finger food", he: "קבלת אורחים עם פינגר פוד" },
+        note:  { it: "", en: "", he: "" },
+      },
+      {
+        time:  "17:30",
+        label: { it: "Cerimonia", en: "Ceremony", he: "טקס" },
+        note:  { it: "", en: "", he: "" },
+      },
+      {
+        time:  "18:00",
+        label: { it: "Aperitivo", en: "Aperitivo", he: "אפריטיבו" },
+        note:  { it: "", en: "", he: "" },
+      },
+      {
+        time:  "20:00",
+        label: { it: "Inizio cena", en: "Dinner begins", he: "תחילת ארוחת הערב" },
+        note:  { it: "", en: "", he: "" },
+      },
+      {
+        time:  "22:00",
+        label: { it: "Festa!", en: "Party!", he: "מסיבה!" },
         note:  { it: "", en: "", he: "" },
       },
     ],
@@ -519,6 +540,7 @@ const CONTENT = {
   /* ── Gifts ──────────────────────────────────────────────── */
   gifts: {
     sectionTitle: { it: "Un Piccolo Pensiero", en: "A Little Gift", he: "מתנה קטנה" },
+    detailsToggle: { it: "Per maggiori dettagli", en: "For more details", he: "לפרטים נוספים" },
     intro: {
       it: "La vostra presenza è il regalo più bello. Se desiderate farci un dono, saremmo felici di un contributo per l'inizio della nostra vita insieme ❤️",
       en: "Your presence is the greatest gift. If you'd like to give something, we'd love a contribution toward the beginning of our life together ❤️",
@@ -528,11 +550,33 @@ const CONTENT = {
       {
         icon:  "🏦",
         title: { it: "Bonifico bancario", en: "Bank transfer", he: "העברה בנקאית" },
-        text:  {
-          it: "IBAN: IT94T0306921705100000014703\nIntestato a: Simone Giacomucci",
-          en: "IBAN: IT94T0306921705100000014703\nPayable to: Simone Giacomucci",
-          he: "IBAN: IT94T0306921705100000014703\nלפקודת: Simone Giacomucci",
-        },
+        text:  { it: "", en: "", he: "" },
+        details: [
+          {
+            label: { it: "Intestatario", en: "Recipient's name", he: "שם המוטב" },
+            value: "Simone Giacomucci",
+          },
+          {
+            label: { it: "Indirizzo", en: "Recipient's address", he: "כתובת המוטב" },
+            value: "via Treviso 20a, Foligno (PG), Italy",
+          },
+          {
+            label: "IBAN",
+            value: "IT94T0306921705100000014703",
+          },
+          {
+            label: "SWIFT/BIC",
+            value: "BCITITMM",
+          },
+          {
+            label: { it: "Banca", en: "Bank name", he: "שם הבנק" },
+            value: "Intesa Sanpaolo SpA",
+          },
+          {
+            label: { it: "Indirizzo banca", en: "Bank address", he: "כתובת הבנק" },
+            value: "Piazza San Carlo 156, Torino 10121, Italy",
+          },
+        ],
         url:   "",
         label: { it: "", en: "", he: "" },
       },

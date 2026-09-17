@@ -232,6 +232,7 @@ function renderDetails() {
 function renderSchedule() {
   const { schedule } = CONTENT;
   setText('schedule-title', schedule.sectionTitle);
+  setText('schedule-subtitle', schedule.subtitle);
 
   const list = document.getElementById('schedule-list');
   if (!list) return;
@@ -531,6 +532,7 @@ function renderGifts() {
   const { gifts } = CONTENT;
   setText('gifts-title', gifts.sectionTitle);
   setText('gifts-intro', gifts.intro);
+  setText('gifts-toggle-label', gifts.detailsToggle);
 
   const grid = document.getElementById('gifts-grid');
   if (!grid) return;
@@ -544,10 +546,22 @@ function renderGifts() {
       ? `<a href="${option.url}" class="btn btn-outline" target="_blank" rel="noopener">${t(option.label)}</a>`
       : '';
 
+    const text = t(option.text);
+    const textHtml = text ? `<p>${text}</p>` : '';
+
+    const detailsHtml = option.details && option.details.length
+      ? `<dl class="gift-details">${option.details.map(row => `
+          <div class="gift-detail-row">
+            <dt>${t(row.label)}</dt>
+            <dd>${t(row.value)}</dd>
+          </div>`).join('')}</dl>`
+      : '';
+
     div.innerHTML = `
       <span class="gift-icon" aria-hidden="true">${option.icon}</span>
       <h3>${t(option.title)}</h3>
-      <p>${t(option.text)}</p>
+      ${textHtml}
+      ${detailsHtml}
       ${btnHtml}
     `;
 
@@ -664,6 +678,7 @@ function initNav() {
   hamburger.addEventListener('click', () => {
     const isOpen = navLinks.classList.toggle('open');
     hamburger.classList.toggle('open', isOpen);
+    navbar.classList.toggle('nav-open', isOpen);
     hamburger.setAttribute('aria-expanded', isOpen);
   });
 
@@ -671,6 +686,7 @@ function initNav() {
     a.addEventListener('click', () => {
       navLinks.classList.remove('open');
       hamburger.classList.remove('open');
+      navbar.classList.remove('nav-open');
       hamburger.setAttribute('aria-expanded', 'false');
     });
   });

@@ -8,7 +8,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Parisienne&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -102,6 +102,7 @@
   <section id="schedule" class="section section-schedule" aria-labelledby="schedule-title">
     <div class="container">
       <h2 class="section-title" id="schedule-title"></h2>
+      <p class="schedule-subtitle" id="schedule-subtitle"></p>
       <ol class="schedule-list" id="schedule-list"></ol>
     </div>
   </section>
@@ -209,7 +210,13 @@
     <div class="container">
       <h2 class="section-title" id="gifts-title"></h2>
       <p class="gifts-intro"   id="gifts-intro"></p>
-      <div class="gifts-grid"  id="gifts-grid"></div>
+      <details class="gifts-accordion">
+        <summary class="gifts-accordion-summary">
+          <span id="gifts-toggle-label"></span>
+          <span class="gifts-accordion-icon" aria-hidden="true">+</span>
+        </summary>
+        <div class="gifts-grid"  id="gifts-grid"></div>
+      </details>
     </div>
   </section>
 
