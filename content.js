@@ -103,9 +103,9 @@ const CONTENT = {
         icon:  "🏰",
         title: { it: "Venerdì 16 – Arrivo",     en: "Friday 16 – Arrival",      he: "שישי 16 – הגעה" },
         lines: {
-          it: ["Check-in nelle camere dalle ore 14:00", "Castello di Rosciano", "<span class=\"detail-em\">Pizza, Cena &amp; Festa ore 18:30</span>"],
-          en: ["Check-in to the rooms from 2:00 PM",  "Castello di Rosciano", "<span class=\"detail-em\">Pizza, Dinner &amp; Party at 6:30 PM</span>"],
-          he: ["צ'ק-אין לחדרים מ-14:00",              "קסטלו די רוסקיאנו",   "<span class=\"detail-em\">פיצה, ארוחת ערב ומסיבה ב-18:30</span>"],
+          it: ["Check-in nelle camere dalle ore 14:00", "Castello di Rosciano", "<span class=\"detail-em\">Cena, Pizza &amp; Festa ore 18:30</span>"],
+          en: ["Check-in to the rooms from 2:00 PM",  "Castello di Rosciano", "<span class=\"detail-em\">Dinner, Pizza  &amp; Party at 6:30 PM</span>"],
+          he: ["צ'ק-אין לחדרים מ-14:00",              "קסטלו די רוסקיאנו",   "<span class=\"detail-em\"> ארוחת, פיצה ערב ומסיבה ב-18:30</span>"],
         },
       },
       {
