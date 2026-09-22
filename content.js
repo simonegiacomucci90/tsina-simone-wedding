@@ -217,6 +217,23 @@ const CONTENT = {
     directionsUrl: "https://maps.google.com/?q=Castello+di+Rosciano+Torgiano+Perugia",
     directionsLabel: { it: "Indicazioni stradali", en: "Get directions", he: "הוראות הגעה" },
     websiteLabel:    { it: "Sito del castello",    en: "Castle website", he: "אתר הטירה" },
+    plan: {
+      src:   "images/castle-map.jpg",
+      title: { it: "Mappa del Castello", en: "Castle Map", he: "מפת הטירה" },
+      caption: {
+        it: "Per orientarvi durante il weekend: la planimetria del castello con le camere, la cappella, la piscina e gli spazi della festa. Cliccate sulla mappa per ingrandirla.",
+        en: "To help you find your way around during the weekend: the castle plan showing the bedrooms, the chapel, the pool and the party areas. Click the map to enlarge it.",
+        he: "כדי לעזור לכם להתמצא במהלך סוף השבוע: תרשים הטירה עם חדרי השינה, הקפלה, הבריכה ואזורי החגיגה. לחצו על המפה להגדלה.",
+      },
+      alt:      { it: "Planimetria del Castello di Rosciano", en: "Castello di Rosciano site plan", he: "תרשים קסטלו די רוסקיאנו" },
+      zoomHint: { it: "Ingrandisci", en: "Enlarge", he: "הגדלה" },
+      // Matterport 3D virtual tours of the castle interiors
+      toursLabel: { it: "Esplorate il castello in 3D", en: "Explore the castle in 3D", he: "סיירו בטירה בתלת-ממד" },
+      tours: [
+        { label: { it: "Sala Lingarda e Suite", en: "Sala Lingarda & Suites", he: "סאלה לינגרדה והסוויטות" }, url: "https://my.matterport.com/show/?m=AfStDxfKhZj&play=1&utm_source=3" },
+        { label: { it: "Salone Tancredi",       en: "Salone Tancredi",        he: "סאלונה טנקרדי" },           url: "https://my.matterport.com/show/?m=sSXZVHaE4aP&play=1&utm_source=3" },
+      ],
+    },
   },
 
   /* ── Explore / Attractions ──────────────────────────────── */
@@ -368,6 +385,31 @@ const CONTENT = {
         ],
       },
     ],
+
+    /* Driving tip for guests visiting historic towns by car */
+    ztl: {
+      title: { it: "🚗 Attenzione ai cartelli ZTL", en: "🚗 Look out for ZTL signs", he: "🚗 שימו לב לשלטי ZTL" },
+      // Each entry is one paragraph; <strong> is allowed.
+      paragraphs: [
+        {
+          it: "Se guidate nei centri storici italiani, fate attenzione ai cartelli con la scritta <strong>“ZTL – Zona a Traffico Limitato”</strong>. Indicano un'area a traffico limitato, di solito controllata da telecamere: l'accesso è consentito solo ai veicoli autorizzati negli orari indicati.",
+          en: "When driving into Italian historic towns, look for signs marked <strong>“ZTL – Zona a Traffico Limitato”</strong>. They mark a restricted traffic area, usually monitored by cameras, where only authorised vehicles may enter during the hours shown.",
+          he: "כשאתם נוהגים לעיירות היסטוריות באיטליה, שימו לב לשלטים עם הכיתוב <strong>“ZTL – Zona a Traffico Limitato”</strong>. הם מסמנים אזור תנועה מוגבלת, בדרך כלל בפיקוח מצלמות, שבו רק כלי רכב מורשים רשאים להיכנס בשעות המצוינות.",
+        },
+        {
+          it: "Se il pannello indica <strong>“ZTL ATTIVA”</strong>, non entrate a meno che il vostro veicolo non sia autorizzato: entrare in una ZTL attiva comporta una multa. Le regole cambiano da città a città e in base a giorno e orario, quindi controllate sempre i cartelli prima di entrare.",
+          en: "If the panel says <strong>“ZTL ATTIVA”</strong>, do not drive in unless your vehicle is authorised, as entering an active ZTL results in a fine. Rules vary by town, day and time, so always check the signs before entering.",
+          he: "אם בשלט כתוב <strong>“ZTL ATTIVA”</strong>, אל תיכנסו אלא אם הרכב שלכם מורשה, שכן כניסה ל-ZTL פעיל גוררת קנס. הכללים משתנים לפי עיר, יום ושעה, לכן תמיד בדקו את השלטים לפני הכניסה.",
+        },
+      ],
+      tip: {
+        it: "💡 Consiglio: quando visitate i borghi storici, lasciate l'auto in un parcheggio segnalato fuori dalla ZTL e proseguite a piedi verso il centro.",
+        en: "💡 Tip: when visiting historic towns, leave your car in a designated car park outside the ZTL and walk into the centre.",
+        he: "💡 טיפ: בביקור בעיירות היסטוריות, השאירו את הרכב בחניון מסומן מחוץ ל-ZTL והמשיכו ברגל למרכז.",
+      },
+      signCaption: { it: "Un tipico cartello d'ingresso in ZTL", en: "A typical ZTL entrance sign", he: "שלט כניסה טיפוסי ל-ZTL" },
+      signAlt:     { it: "Cartello ZTL: disco bianco bordato di rosso, scritta “ZTL – Zona a Traffico Limitato” e pannello luminoso “ZTL ATTIVA”", en: "ZTL sign: white disc with red border, the words “ZTL – Zona a Traffico Limitato” and an illuminated panel reading “ZTL ATTIVA”", he: "שלט ZTL: עיגול לבן עם מסגרת אדומה, הכיתוב “ZTL – Zona a Traffico Limitato” ולוח מואר “ZTL ATTIVA”" },
+    },
   },
 
   /* ── Extra nights / Suggested hotels ───────────────────── */

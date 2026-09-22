@@ -274,6 +274,32 @@ function renderVenue() {
 
   const iframe = document.getElementById('venue-map-iframe');
   if (iframe && !iframe.src) iframe.src = venue.mapsEmbedUrl;
+
+  // Castle plan (opens full-size in the lightbox)
+  const plan = venue.plan;
+  const planBtn = document.getElementById('venue-plan-btn');
+  const planImg = document.getElementById('venue-plan-img');
+  if (plan && planBtn && planImg) {
+    setText('venue-plan-title',   plan.title);
+    setText('venue-plan-caption', plan.caption);
+    setText('venue-plan-zoom',    plan.zoomHint);
+    planImg.src = plan.src;
+    planImg.alt = t(plan.alt);
+    planBtn.setAttribute('aria-label', t(plan.zoomHint));
+    // Assign (not addEventListener) so re-rendering on language switch doesn't stack handlers
+    planBtn.onclick = () => openLightbox(0, [{ src: plan.src, alt: plan.alt }]);
+
+    // 3D virtual tours
+    setText('venue-plan-tours-label', plan.toursLabel);
+    const tours = document.getElementById('venue-plan-tours');
+    if (tours) {
+      tours.innerHTML = (plan.tours || []).map(tour => `
+        <a href="${tour.url}" class="btn btn-outline venue-plan-tour" target="_blank" rel="noopener">
+          <span class="venue-plan-tour-icon" aria-hidden="true">&#x1F3E0;</span>${t(tour.label)}
+        </a>
+      `).join('');
+    }
+  }
 }
 
 /* ── Explore / Attractions ──────────────────────────────────── */
@@ -312,6 +338,17 @@ function renderExplore() {
 
     grid.appendChild(card);
   });
+
+  // ── ZTL driving tip ──────────────────────────────────────
+  const ztl = explore.ztl;
+  const ztlBody = document.getElementById('ztl-body');
+  if (ztl && ztlBody) {
+    setText('ztl-title', ztl.title);
+    ztlBody.innerHTML = ztl.paragraphs.map(p => `<p class="travel-text">${t(p)}</p>`).join('');
+    setText('ztl-note', ztl.tip);
+    setText('ztl-sign-caption', ztl.signCaption);
+    setText('ztl-sign-label', ztl.signAlt);
+  }
 }
 
 /* ── Extra nights / Suggested hotels ───────────────────────── */
@@ -572,6 +609,8 @@ function renderGifts() {
 
 /* ── Lightbox ───────────────────────────────────────────────── */
 let lightboxIndex = 0;
+/** The image set currently shown in the lightbox (story gallery by default, or a one-off set such as the castle plan). */
+let activeLightboxImages = [];
 
 function initLightbox() {
   const lb    = document.getElementById('lightbox');
@@ -594,23 +633,35 @@ function initLightbox() {
 }
 
 function navigateLightbox(dir) {
-  lightboxIndex = (lightboxIndex + dir + storyLightboxImages.length) % storyLightboxImages.length;
+  if (activeLightboxImages.length < 2) return;
+  lightboxIndex = (lightboxIndex + dir + activeLightboxImages.length) % activeLightboxImages.length;
   setLightboxImage(lightboxIndex);
 }
 
 function setLightboxImage(index) {
   const img = document.getElementById('lightbox-img');
   const cap = document.getElementById('lightbox-caption');
-  const { src, alt } = storyLightboxImages[index];
+  const { src, alt } = activeLightboxImages[index];
   if (img) { img.src = src; img.alt = t(alt); }
   if (cap) cap.textContent = t(alt);
 }
 
-function openLightbox(index) {
+/**
+ * @param {number} index  Index of the image to show.
+ * @param {Array}  [images]  Optional image set; defaults to the story gallery.
+ */
+function openLightbox(index, images) {
   const lb = document.getElementById('lightbox');
   if (!lb) return;
+  activeLightboxImages = images || storyLightboxImages;
   lightboxIndex = index;
   setLightboxImage(index);
+  // Hide prev/next arrows when there is nothing to navigate to
+  const single = activeLightboxImages.length < 2;
+  const prev = document.getElementById('lightbox-prev');
+  const next = document.getElementById('lightbox-next');
+  if (prev) prev.hidden = single;
+  if (next) next.hidden = single;
   lb.hidden = false;
   document.body.style.overflow = 'hidden';
 }

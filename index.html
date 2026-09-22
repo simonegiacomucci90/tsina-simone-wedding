@@ -134,6 +134,19 @@
           <img class="venue-photo" src="images/venue.jpg" alt="Castello di Rosciano" loading="lazy" />
         </div>
       </div>
+
+      <!-- Castle plan / venue map -->
+      <div class="venue-plan reveal">
+        <h3 class="venue-plan-title" id="venue-plan-title"></h3>
+        <p  class="venue-plan-caption" id="venue-plan-caption"></p>
+        <button type="button" class="venue-plan-figure" id="venue-plan-btn">
+          <img class="venue-plan-img" id="venue-plan-img" src="images/castle-map.jpg" alt="" loading="lazy" />
+          <span class="venue-plan-zoom" id="venue-plan-zoom" aria-hidden="true"></span>
+        </button>
+        <!-- 3D virtual tours (Matterport) -->
+        <p class="venue-plan-tours-label" id="venue-plan-tours-label"></p>
+        <div class="venue-plan-tours" id="venue-plan-tours"></div>
+      </div>
     </div>
   </section>
 
@@ -191,6 +204,35 @@
       <h2 class="section-title" id="explore-title"></h2>
       <p class="section-intro"  id="explore-intro"></p>
       <div class="places-grid"  id="places-grid"></div>
+
+      <!-- ZTL driving tip for international guests -->
+      <aside class="travel-section travel-highlight ztl-tip reveal" id="ztl-tip" aria-labelledby="ztl-title">
+        <div class="ztl-tip-text">
+          <h3 class="travel-subtitle" id="ztl-title"></h3>
+          <div class="ztl-tip-body" id="ztl-body"></div>
+          <p class="ztl-tip-note" id="ztl-note"></p>
+        </div>
+        <figure class="ztl-sign-figure">
+          <!-- Stylised replica of a typical Italian ZTL entrance sign -->
+          <svg class="ztl-sign" viewBox="0 0 200 300" role="img" aria-labelledby="ztl-sign-label" xmlns="http://www.w3.org/2000/svg">
+            <title id="ztl-sign-label"></title>
+            <!-- post -->
+            <rect x="94" y="230" width="12" height="70" rx="2" fill="#8a8580" />
+            <!-- main panel -->
+            <rect x="10" y="10" width="180" height="222" rx="10" fill="#ffffff" stroke="#c9c2b8" stroke-width="2" />
+            <!-- no-entry disc -->
+            <circle cx="100" cy="60" r="36" fill="#ffffff" stroke="#c8102e" stroke-width="12" />
+            <!-- ZTL wording -->
+            <text x="100" y="128" text-anchor="middle" font-family="Jost, Arial, sans-serif" font-weight="600" font-size="34" letter-spacing="2" fill="#1d1a17">ZTL</text>
+            <text x="100" y="150" text-anchor="middle" font-family="Jost, Arial, sans-serif" font-weight="500" font-size="10.5" letter-spacing="0.6" fill="#1d1a17">ZONA A TRAFFICO LIMITATO</text>
+            <!-- variable-message panel -->
+            <rect x="24" y="168" width="152" height="48" rx="5" fill="#1d1a17" />
+            <rect x="29" y="173" width="142" height="38" rx="3" fill="#0b0a09" stroke="#3a3632" stroke-width="1" />
+            <text x="100" y="199" text-anchor="middle" font-family="Jost, 'Courier New', monospace" font-weight="600" font-size="17" letter-spacing="1.5" fill="#ff3b30">ZTL ATTIVA</text>
+          </svg>
+          <figcaption class="ztl-sign-caption" id="ztl-sign-caption"></figcaption>
+        </figure>
+      </aside>
     </div>
   </section>
 
