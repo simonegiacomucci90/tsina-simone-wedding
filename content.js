@@ -112,9 +112,9 @@ const CONTENT = {
         icon:  "💍",
         title: { it: "Sabato 17 – Cerimonia, Cena & Festa", en: "Saturday 17 – Ceremony, Dinner & Party", he: "שבת 17 – טקס, ארוחת ערב ומסיבה" },
         lines: {
-          it: ["Colazione 9:00 – 11:00", "Gli eventi del matrimonio inizieranno dalle 16:30", "Dress code: formal attire or festive attire"],
-          en: ["Breakfast 9:00 – 11:00 AM", "Wedding events will start from 4:30 PM", "Dress code: formal attire or festive attire"],
-          he: ["ארוחת בוקר 9:00 – 11:00", "אירועי החתונה יתחילו מ-16:30", "קוד לבוש: לבוש רשמי או לבוש חגיגי"],
+          it: ["Colazione 9:00 – 11:00", "Gli eventi del matrimonio inizieranno dalle 16:00", "Dress code: formal attire or festive attire"],
+          en: ["Breakfast 9:00 – 11:00 AM", "Wedding events will start from 4:00 PM", "Dress code: formal attire or festive attire"],
+          he: ["ארוחת בוקר 9:00 – 11:00", "אירועי החתונה יתחילו מ-16:00", "קוד לבוש: לבוש רשמי או לבוש חגיגי"],
         },
       },
       {
@@ -135,12 +135,12 @@ const CONTENT = {
     subtitle:     { it: "Il giorno del matrimonio", en: "Wedding day", he: "יום החתונה" },
     items: [
       {
-        time:  "16:30",
+        time:  "16:00",
         label: { it: "Accoglienza degli ospiti con finger food", en: "Guest welcome with finger food", he: "קבלת אורחים עם פינגר פוד" },
         note:  { it: "", en: "", he: "" },
       },
       {
-        time:  "17:30",
+        time:  "17:00",
         label: { it: "Cerimonia", en: "Ceremony", he: "טקס" },
         note:  { it: "", en: "", he: "" },
       },
