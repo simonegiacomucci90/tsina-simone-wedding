@@ -307,6 +307,19 @@ function renderExplore() {
   const { explore } = CONTENT;
   setText('explore-title',          explore.sectionTitle);
   setText('explore-intro',          explore.intro);
+  // ── Sunday disclaimer (extra night + sushi) ──────────────
+  const sundayNote = explore.sundayNote;
+  const sundayEl = document.getElementById('explore-sunday-note');
+  if (sundayNote && sundayEl) {
+    const sheetLink = `<a href="${sundayNote.sheetUrl}" target="_blank" rel="noopener noreferrer">${t(sundayNote.sheetLabel)}</a>`;
+    sundayEl.innerHTML = `
+      <span class="explore-sunday-icon" aria-hidden="true">${sundayNote.icon}</span>
+      <div class="explore-sunday-body">
+        ${sundayNote.items.map(item => `<p>${t(item).replace('{sheet}', sheetLink)}</p>`).join('')}
+      </div>
+    `;
+  }
+
   const grid = document.getElementById('places-grid');
   if (!grid) return;
   grid.innerHTML = '';

@@ -248,6 +248,29 @@ const CONTENT = {
       en: "While all of our wedding celebrations will be held at the venue, we'd love for you to enjoy the beauty of the surrounding area as well. Below, you'll find a selection of places we recommend visiting if you're planning to stay a little longer before or after the wedding.",
       he: "כל חגיגות החתונה שלנו יתקיימו במקום האירוע, אך נשמח שתיהנו גם מיופי האזור הסובב. להלן מבחר מקומות שאנו ממליצים לבקר בהם אם אתם מתכננים להישאר קצת יותר לפני או אחרי החתונה.",
     },
+    /* Small disclaimer about Sunday: extra night at the castle + sushi dinner. <strong> allowed; {sheet} becomes a link. */
+    sundayNote: {
+      icon: "🏰",
+      sheetUrl: "https://docs.google.com/spreadsheets/d/12cnpCCAnun0noIIQnQM4c0Hoa2Ek0DEhJn56cAv93hQ/edit?usp=sharing",
+      sheetLabel: { it: "modulo di iscrizione", en: "sign-up sheet", he: "טופס ההרשמה" },
+      items: [
+        {
+          it: "I festeggiamenti si concludono <strong>domenica dopo la colazione</strong>. Il pernottamento al castello per il weekend del matrimonio è <strong>offerto da noi</strong>.",
+          en: "Our wedding events wrap up on <strong>Sunday after breakfast</strong>. Your stay at the castle for the wedding weekend is <strong>on us</strong>.",
+          he: "אירועי החתונה מסתיימים <strong>ביום ראשון אחרי ארוחת הבוקר</strong>. הלינה בטירה בסוף שבוע החתונה היא <strong>עלינו</strong>.",
+        },
+        {
+          it: "Se volete fermarvi a esplorare l'Umbria, potete restare al castello <strong>una notte in più, domenica</strong> (a pagamento), così da non dover cambiare hotel. I costi sono indicati nel {sheet}: per prenotarla compilatelo.",
+          en: "If you'd like to keep exploring Umbria, you can stay at the castle for <strong>an extra night on Sunday</strong> (for an additional fee), so you don't have to switch hotels. The costs are indicated on the {sheet}: please fill it in to book.",
+          he: "אם תרצו להמשיך לטייל באומבריה, תוכלו להישאר בטירה <strong>לילה נוסף ביום ראשון</strong> (בתשלום נוסף), כך שלא תצטרכו להחליף מלון. העלויות מצוינות ב{sheet}: להזמנה, אנא מלאו אותו.",
+        },
+        {
+          it: "🍣 Domenica sera, per chi resta in zona, organizziamo un tavolo in uno dei ristoranti preferiti di Tsina in Italia: un ottimo sushi all-you-can-eat. Non fa parte del programma ufficiale, è solo un extra per chi vuole unirsi: segnatevi nello stesso {sheet} o fatecelo sapere.",
+          en: "🍣 On Sunday evening, for those sticking around, we're organising a table at one of Tsina's absolute favourite restaurants in Italy: a really good all-you-can-eat sushi place. It's not an official wedding event, just a fun extra for anyone who wants to join: sign up in the same {sheet} or let us know.",
+          he: "🍣 ביום ראשון בערב, למי שנשאר באזור, אנחנו מארגנים שולחן באחת המסעדות האהובות ביותר על צינה באיטליה: מקום סושי אכול-כפי-יכולתך ממש טוב. זה לא חלק רשמי מאירועי החתונה, רק תוספת כיפית למי שרוצה להצטרף: הירשמו באותו {sheet} או ספרו לנו.",
+        },
+      ],
+    },
     places: [
       {
         name:  "Assisi",
