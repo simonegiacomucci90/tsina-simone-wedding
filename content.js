@@ -271,6 +271,18 @@ const CONTENT = {
         },
       ],
     },
+    /* Small note about the Ottobre Trevano festival in Trevi, for guests staying before/after. {link} becomes a link. */
+    eventNote: {
+      icon: "🎉",
+      url: "https://www.ottobretrevano.it/",
+      linkLabel: { it: "Ottobre Trevano", en: "Ottobre Trevano", he: "Ottobre Trevano" },
+      siteLabel: { it: "loro sito", en: "their website", he: "האתר שלהם" },
+      text: {
+        it: "Se vi fermate qualche giorno prima o dopo il matrimonio, date un'occhiata a {link}: per tutto il mese di ottobre il borgo di Trevi (a circa 30 minuti dal castello) si anima con sagre, mercatini, rievocazioni storiche e il Palio dei Terzieri. Trovate il programma completo sul {site}.",
+        en: "If you're staying a few days before or after the wedding, have a look at {link}: throughout October the hilltop village of Trevi (about 30 minutes from the castle) comes alive with food festivals, markets, historical re-enactments and the Palio dei Terzieri. You can find the full programme on {site}.",
+        he: "אם אתם נשארים כמה ימים לפני או אחרי החתונה, הציצו ב-{link}: לאורך כל חודש אוקטובר הכפר טרווי (כ-30 דקות מהטירה) מתעורר לחיים עם פסטיבלי אוכל, שווקים, שחזורים היסטוריים והפאליו דיי טרציירי. את התוכנית המלאה תמצאו ב{site}.",
+      },
+    },
     places: [
       {
         name:  "Assisi",

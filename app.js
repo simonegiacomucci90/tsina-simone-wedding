@@ -320,6 +320,20 @@ function renderExplore() {
     `;
   }
 
+  // ── Ottobre Trevano festival note ────────────────────────
+  const eventNote = explore.eventNote;
+  const eventEl = document.getElementById('explore-event-note');
+  if (eventNote && eventEl) {
+    const eventLink = `<a href="${eventNote.url}" target="_blank" rel="noopener noreferrer">${t(eventNote.linkLabel)}</a>`;
+    const siteLink  = `<a href="${eventNote.url}" target="_blank" rel="noopener noreferrer">${t(eventNote.siteLabel)}</a>`;
+    eventEl.innerHTML = `
+      <span class="explore-sunday-icon" aria-hidden="true">${eventNote.icon}</span>
+      <div class="explore-sunday-body">
+        <p>${t(eventNote.text).replace('{link}', eventLink).replace('{site}', siteLink)}</p>
+      </div>
+    `;
+  }
+
   const grid = document.getElementById('places-grid');
   if (!grid) return;
   grid.innerHTML = '';
