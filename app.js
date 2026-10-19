@@ -104,60 +104,7 @@ function renderHero() {
   setText('hero-subtitle', couple.subtitle);
   setText('hero-date',     `${t(date.dayRange)} · ${t(date.display)}`);
   setText('hero-venue',   hero.venueLabel);
-}
-
-/* ── Countdown ──────────────────────────────────────────────── */
-let countdownInitialized = false;
-
-function buildCountdown() {
-  if (countdownInitialized) return;
-  countdownInitialized = true;
-
-  const target = new Date(CONTENT.date.iso).getTime();
-  const container = document.getElementById('countdown');
-  if (!container) return;
-
-  const labelKeys = {
-    it: ['Giorni', 'Ore', 'Minuti', 'Secondi'],
-    en: ['Days',   'Hours', 'Minutes', 'Seconds'],
-    he: ['ימים',  'שעות',  'דקות',    'שניות'],
-  };
-
-  // Build structure once; update numbers and labels on language change
-  container.innerHTML = '';
-  const units = [0, 1, 2, 3].map(() => {
-    const unit  = document.createElement('div');
-    unit.className = 'countdown-unit';
-    const num   = document.createElement('span');
-    num.className = 'countdown-number';
-    const label = document.createElement('span');
-    label.className = 'countdown-label';
-    unit.append(num, label);
-    container.appendChild(unit);
-    return { num, label };
-  });
-
-  function tick() {
-    const diff = target - Date.now();
-    if (diff <= 0) {
-      container.innerHTML = `<span style="font-family:var(--font-heading);font-size:1.5rem;font-style:italic">🎉</span>`;
-      return;
-    }
-    const vals  = [
-      Math.floor(diff / 86400000),
-      Math.floor((diff % 86400000) / 3600000),
-      Math.floor((diff % 3600000) / 60000),
-      Math.floor((diff % 60000) / 1000),
-    ];
-    const labels = labelKeys[currentLang] || labelKeys['en'];
-    vals.forEach((v, i) => {
-      units[i].num.textContent   = String(v).padStart(2, '0');
-      units[i].label.textContent = labels[i];
-    });
-  }
-
-  tick();
-  setInterval(tick, 1000);
+  setText('hero-thanks',  hero.thanks);
 }
 
 /* ── Our Story ──────────────────────────────────────────────── */
@@ -633,6 +580,16 @@ function renderGifts() {
   });
 }
 
+/* ── Link sections (share photos/videos, photo booth) ───────── */
+function renderLinkSection(key) {
+  const section = CONTENT[key];
+  setText(`${key}-icon`,  section.icon);
+  setText(`${key}-title`, section.sectionTitle);
+  setText(`${key}-intro`, section.intro);
+
+  const btn = document.getElementById(`${key}-btn`);
+  if (btn) { btn.href = section.url; btn.textContent = t(section.label); }
+}
 
 /* ── Lightbox ───────────────────────────────────────────────── */
 let lightboxIndex = 0;
@@ -805,6 +762,8 @@ function renderAll() {
 
   renderFaq();
   renderGifts();
+  renderLinkSection('memories');
+  renderLinkSection('photobooth');
   renderRsvp();
   renderFooter();
 
@@ -816,7 +775,6 @@ function renderAll() {
 function boot() {
   // One-time structural builds (things that don't change layout on lang switch)
   buildHero();
-  buildCountdown();
   initNav();
   initLangSwitcher();
 

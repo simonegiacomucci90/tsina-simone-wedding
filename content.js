@@ -26,9 +26,9 @@ const CONTENT = {
       he: "שני לבבות, סיפור אחד",
     },
     subtitle: {
-      it: "si sposano",
-      en: "are getting married",
-      he: "מתחתנים",
+      it: "si sono sposati",
+      en: "just got married",
+      he: "התחתנו",
     },
   },
 
@@ -50,13 +50,18 @@ const CONTENT = {
 
   /* ── Hero ───────────────────────────────────────────────── */
   hero: {
-    backgroundImage: "images/background.jpeg",
-    backgroundImageMobile: "images/background-mobile.jpeg",
+    backgroundImage: "images/hero.jpg",
+    backgroundImageMobile: "images/hero.jpg",
     overlayOpacity:  0.45,
     venueLabel: {
       it: "Castello di Rosciano · Umbria, Italia",
       en: "Castello di Rosciano · Umbria, Italy",
       he: "קסטלו די רוסקיאנו · אומבריה, איטליה",
+    },
+    thanks: {
+      it: "Grazie per essere venuti!",
+      en: "Thanks for coming!",
+      he: "תודה שבאתם!",
     },
   },
 
@@ -71,6 +76,7 @@ const CONTENT = {
     travel:     { it: "Arrivo",     en: "Travel",    he: "הגעה" },
     faq:        { it: "FAQ",        en: "FAQ",       he: "שאלות נפוצות" },
     gifts:      { it: "Regalo",     en: "A Little Gift",     he: "מתנה" },
+    memories:   { it: "Foto",       en: "Photos",    he: "תמונות" },
     gallery:    { it: "Galleria",   en: "Gallery",   he: "גלריה" },
     rsvp:       { it: "RSVP",       en: "RSVP",      he: "אישור הגעה" },
   },
@@ -668,7 +674,40 @@ const CONTENT = {
         url:   "",
         label: { it: "", en: "", he: "" },
       },
+      {
+        icon:  "💳",
+        title: "PayPal",
+        text:  "simone.giacomucci@gmail.com",
+        url:   "",
+        label: { it: "", en: "", he: "" },
+      },
     ],
+  },
+
+  /* ── Share your photos & videos ─────────────────────────── */
+  memories: {
+    icon:         "📸",
+    sectionTitle: { it: "Condividete i Vostri Ricordi", en: "Share Your Memories", he: "שתפו את הזכרונות שלכם" },
+    intro: {
+      it: "Ci piacerebbe tantissimo rivivere il nostro matrimonio anche attraverso i vostri occhi! Caricate tutte le foto e i video che avete — i momenti spontanei, i brindisi, le danze, proprio tutto — così potremo goderci ogni attimo emozionante. Grazie di cuore! 💛",
+      en: "We'd love to see our wedding through your eyes too! Please upload all the photos and videos you took — the candid moments, the toasts, the dance floor, everything — so we can relive every special moment with you. Thank you so much! 💛",
+      he: "נשמח מאוד לראות את החתונה גם מהזווית שלכם! העלו את כל התמונות והסרטונים שיש לכם — הרגעים הספונטניים, ההרמות כוסית, הריקודים, הכל — כדי שנוכל ליהנות מכל הרגעים המרגשים. תודה רבה! 💛",
+    },
+    url:   "https://drive.google.com/drive/folders/1MY0_EkLR0uLq2banRHkkzHqhjm0txoGV",
+    label: { it: "📤 Carica foto e video", en: "📤 Upload your photos & videos", he: "📤 העלו תמונות וסרטונים" },
+  },
+
+  /* ── Photo booth ────────────────────────────────────────── */
+  photobooth: {
+    icon:         "🎞️",
+    sectionTitle: { it: "Photo Booth", en: "Photo Booth", he: "עמדת הצילום" },
+    intro: {
+      it: "Facce buffe, grandi sorrisi e qualche posa decisamente discutibile: ecco tutti gli scatti del photo booth, durante l'aperitivo e la festa! Cercatevi, scaricate i vostri preferiti e teneteli come piccolo ricordo della nostra giornata. 🎉",
+      en: "Silly faces, big smiles and a few highly questionable poses: here are all the photo booth shots from the appetizers and the party! Find yourself, download your favourites and keep them as a little souvenir of our day. 🎉",
+      he: "פרצופים מצחיקים, חיוכים גדולים וכמה פוזות מפוקפקות במיוחד: הנה כל התמונות מעמדת הצילום, מקבלת הפנים ומהמסיבה! מצאו את עצמכם, הורידו את האהובות עליכם ושמרו אותן כמזכרת קטנה מהיום שלנו. 🎉",
+    },
+    url:   "https://drive.google.com/drive/folders/1gK85OKxWnAKCz3Z4XqF4KhC4zJ04xQcy?usp=share_link",
+    label: { it: "📷 Guarda le foto", en: "📷 See the photos", he: "📷 לצפייה בתמונות" },
   },
 
   /* ── Gallery ────────────────────────────────────────────── */
